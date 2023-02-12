@@ -1,0 +1,83 @@
+---
+name: Build PR Target
+
+"on":
+  pull_request_target:
+    branches: [main]
+    types:
+      - opened
+      - edited
+      - reopened
+      - synchronize
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  validate-pr-title:
+    name: Validate PR title
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Validate PR title
+        # yamllint disable-line rule:line-length
+        uses: amannn/action-semantic-pull-request@b6bca70dcd3e56e896605356ce09b76f7e1e0d39 # v5.1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          validateSingleCommit: true
+          validateSingleCommitMatchesPrTitle: true
+          subjectPattern: ^(?![A-Z]).+$
+          subjectPatternError: >
+            The subject "{subject}" found in the pull request title "{title}"
+            didn't match the configured pattern. Please ensure that the subject
+            doesn't start with an uppercase character.
+
+  label-pr:
+    name: Label PR
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Label PR
+        # yamllint disable-line rule:line-length
+        uses: bcoe/conventional-release-labels@886f696738527c7be444262c327c89436dfb95a8 # tag=v1.3.1
+        with:
+          ignored_types: "[]"
+          type_labels: >
+            {
+              "breaking": "breaking",
+              "feat": "feature",
+              "fix": "fix",
+              "perf": "performance",
+              "refactor": "refactor",
+              "build": "build",
+              "ci": "ci",
+              "revert": "revert",
+              "test": "test",
+              "docs": "documentation",
+              "chore": "chore"
+            }
+
+  approve-pr:
+    name: Approve PR
+    runs-on: ubuntu-latest
+    if: github.actor == 'akikanellis' || github.actor == 'aki-bot[bot]'
+
+    steps:
+      - name: Get token
+        id: get-token
+        run: |
+          if [[ ${{ github.actor }} == "akikanellis" ]]; then
+            token=${{ secrets.GITHUB_TOKEN }}
+          else
+            token=${{ secrets.AKI_APPROVE_PRS_TOKEN }}
+          fi
+
+          echo "token=$token" >> "$GITHUB_OUTPUT"
+
+      - name: Approve PR
+        # yamllint disable-line rule:line-length
+        uses: hmarr/auto-approve-action@de8ae18c173c131e182d4adf2c874d8d2308a85b # tag=v3.1.0
+        with:
+          github-token: ${{ steps.get-token.outputs.token }}

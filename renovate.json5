@@ -1,0 +1,107 @@
+{
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: [
+    "config:base",
+
+    ":semanticCommitType(build)",
+    ":semanticCommitTypeAll(build)",
+
+    "docker:pinDigests",
+
+    "group:allNonMajor",
+
+    "helpers:pinGitHubActionDigests"
+  ],
+  username: "aki-bot[bot]",
+  gitAuthor: "aki-bot <103840025+aki-bot[bot]@users.noreply.github.com>",
+  platform: "github",
+  repositories: ["akikanellis/advent-of-code"],
+  branchPrefix: "update-dependencies-",
+  onboarding: false,
+  requireConfig: "required",
+  automerge: true,
+  platformAutomerge: true,
+  rollbackPrs: true,
+  schedule: ["after 3:00 and before 6:00 on Saturday"],
+  regexManagers: [
+    {
+      description: "Update Java in .tool-versions.\
+      The asdf manager for renovate does not currently support the temurin\
+      distribution.\
+      See:\
+        * https://github.com/renovatebot/renovate/issues/19183\
+        * https://github.com/renovatebot/renovate/issues/19184",
+      // eslint-disable-next-line jsonc/no-useless-escape
+      fileMatch: ["(^|/)\.tool-versions$"],
+      matchStrings: ["java\\s+temurin-(?<currentValue>.+)(\\s+|\\s+.*)"],
+      datasourceTemplate: "adoptium-java",
+      depNameTemplate: "java"
+    },
+    {
+      description: "Any other file with dependencies",
+      fileMatch: [
+        /* eslint-disable jsonc/no-useless-escape */
+        "(^|/)justfile$",
+        "(^|/).+\.gradle(\.kts)?$",
+        "(^workflow-templates|\.github/workflows)/[^/]+\.ya?ml$",
+        "(^|/)action\.ya?ml$",
+        "^ansible/.*vars/[^/]+\.ya?ml$"
+        /* eslint-enable jsonc/no-useless-escape */
+      ],
+      matchStrings: [
+        "\
+.*renovate:\
+\\sdatasource=(?<datasource>.*?)\
+\\sdepName=(?<depName>.*?)\
+(\\sversioning=(?<versioning>.*?))?\
+\n.*(version|Version|VERSION)\\s*(:=|=|:)\\s*\"?(?<currentValue>.*?)\
+(@(?<currentDigest>sha256:[a-f0-9]+))?\"?\
+(\\s+|\\s+.*)"
+      ],
+      versioningTemplate: "\
+{{#if versioning}}\
+{{{versioning}}}\
+{{else}}\
+semver\
+{{/if}}"
+    }
+  ],
+  packageRules: [
+    {
+      description: "Block automerge for major updates",
+      matchUpdateTypes: ["major"],
+      automerge: false
+    },
+    {
+      description: "Limit semantic-release versions to 19.x.x.\
+      Version 20.0.0 is not currently compatible with\
+      cycjimmy/semantic-release-action",
+      matchDatasources: ["npm"],
+      matchPackageNames: ["semantic-release"],
+      allowedVersions: "<= 19"
+    },
+    {
+      description: "Limit gradle-semantic-release-plugin versions to 1.7.4.\
+      Version 1.7.5 is currently only compatible with semantic-release >= 20",
+      matchDatasources: ["npm"],
+      matchPackageNames: ["gradle-semantic-release-plugin"],
+      allowedVersions: "<= 1.7.4"
+    },
+    {
+      description: "Use correct compatibility for github/super-linter",
+      matchDatasources: ["docker"],
+      matchPackageNames: ["github/super-linter"],
+      versioning: "\
+regex:\
+^((?<compatibility>.+)-)?\
+v?\
+(?<major>\\d+)\
+(\\.(?<minor>\\d+))?\
+(\\.(?<patch>\\d+))?$"
+    }
+  ],
+  "docker-compose": {
+    // eslint-disable-next-line jsonc/no-useless-escape
+    fileMatch: ["(^|/)(?:docker-)?compose[^/]*\.ya?ml\.j2$"]
+  }
+}
