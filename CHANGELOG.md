@@ -1,3 +1,10 @@
+## [1.2.0](https://github.com/akikanellis/advent-of-code/compare/v1.1.1...v1.2.0) (2023-02-13)
+
+
+### Features
+
+* solve year 2022, day 2 ([#9](https://github.com/akikanellis/advent-of-code/issues/9)) ([709dfdb](https://github.com/akikanellis/advent-of-code/commit/709dfdb66fa00ee43c6b5c9a08a3e3ae19d67fc2)), closes [#4](https://github.com/akikanellis/advent-of-code/issues/4)
+
 ## [1.1.1](https://github.com/akikanellis/advent-of-code/compare/v1.1.0...v1.1.1) (2023-02-13)
 
 
