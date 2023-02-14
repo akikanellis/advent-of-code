@@ -25,7 +25,7 @@ lint *extra_args:
   --env IGNORE_GENERATED_FILES=true \
   --env IGNORE_GITIGNORED_FILES=true \
   --env YAML_ERROR_ON_WARNING=true \
-  --env FILTER_REGEX_EXCLUDE=.*gradlew.* \
+  --env FILTER_REGEX_EXCLUDE="(.*gradlew.*|.*day-.+-input-.+\.txt)" \
   --volume {{justfile_directory()}}:/tmp/lint \
   {{extra_args}} \
   github/super-linter:{{super_linter_version}}
