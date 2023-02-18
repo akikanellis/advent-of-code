@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/akikanellis/advent-of-code/compare/v1.7.1...v1.7.2) (2023-02-18)
+
+
+### Build System
+
+* **deps:** update dependency gradle to v8 ([#22](https://github.com/akikanellis/advent-of-code/issues/22)) ([9da4986](https://github.com/akikanellis/advent-of-code/commit/9da4986ef2a0be279a3ca3a54361451713869f5a))
+
 ## [1.7.1](https://github.com/akikanellis/advent-of-code/compare/v1.7.0...v1.7.1) (2023-02-18)
 
 
