@@ -1,3 +1,6 @@
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+import org.gradle.api.tasks.testing.logging.TestLogEvent
+
 plugins {
     kotlin("jvm") version "1.8.10"
 
@@ -29,6 +32,21 @@ kotlin {
 
 tasks.test {
     useJUnitPlatform()
+
+    testLogging {
+        showExceptions = true
+        showCauses = true
+        exceptionFormat = TestExceptionFormat.FULL
+
+        events = setOf(
+            TestLogEvent.STARTED,
+            TestLogEvent.PASSED,
+            TestLogEvent.SKIPPED,
+            TestLogEvent.FAILED,
+            TestLogEvent.STANDARD_OUT,
+            TestLogEvent.STANDARD_ERROR
+        )
+    }
 }
 
 tasks.jacocoTestReport {
