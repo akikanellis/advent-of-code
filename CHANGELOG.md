@@ -1,3 +1,10 @@
+## [1.7.3](https://github.com/akikanellis/advent-of-code/compare/v1.7.2...v1.7.3) (2023-02-18)
+
+
+### Build System
+
+* print test results ([#23](https://github.com/akikanellis/advent-of-code/issues/23)) ([21def18](https://github.com/akikanellis/advent-of-code/commit/21def18a685a932df08c8f366eaef6ff869ac161))
+
 ## [1.7.2](https://github.com/akikanellis/advent-of-code/compare/v1.7.1...v1.7.2) (2023-02-18)
 
 
