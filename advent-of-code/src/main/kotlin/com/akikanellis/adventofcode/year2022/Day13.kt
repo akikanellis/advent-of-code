@@ -1,6 +1,18 @@
 package com.akikanellis.adventofcode.year2022
 
 object Day13 {
+    fun decoderKey(input: String) = (input
+        .lines() + "[[2]]" + "[[6]]")
+        .filter { it.isNotBlank() }
+        .map { codes(it) }
+        .sortedWith(Comparator<List<Any>> { a, b -> if (rightOrder(a, b)!!) -1 else 1 })
+        //.also { println("Order: \n${it.joinToString("\n")}") }
+        .withIndex()
+        .filter { (index, codes) -> codes == listOf(listOf(2)) || codes == listOf(listOf(6)) }
+        .map { (index, _) -> index + 1 }
+        .reduce(Int::times)
+
+
     fun sumOfIndicesInRightOrder(input: String) = input
         .split("\n\n")
         .filter { it.isNotBlank() }
@@ -11,7 +23,7 @@ object Day13 {
         .sumOf { (index, _, _) -> index }
 
     private fun rightOrder(left: Any?, right: Any?): Boolean? {
-        println("Comparing: left='$left', right='$right'")
+        //println("Comparing: left='$left', right='$right'")
 
         val result = if (left == null && right == null) {
             null
@@ -38,7 +50,7 @@ object Day13 {
             error("Uh oh")
         }
 
-        return result.also { println("Returning '$it' for comparison left='$left', right='$right''") }
+        return result //.also { println("Returning '$it' for comparison left='$left', right='$right''") }
     }
 
     private fun codes(code: String): List<Any> {
@@ -58,7 +70,7 @@ object Day13 {
         } else if (nextChar == ',') {
             codeRec(code, parentList)
         } else if (nextChar.isDigit()) {
-            println("nextChar='$nextChar', code='$code'")
+            //println("nextChar='$nextChar', code='$code'")
 
             val numberString = (listOf(nextChar) + code.takeWhile { it.isDigit() }).joinToString("")
             
@@ -67,7 +79,7 @@ object Day13 {
 
             if (numberString.length > 1) (0..numberString.length - 2).forEach { code.removeAt(it) }
 
-            println("numberString='$numberString', code='$code'")
+            //println("numberString='$numberString', code='$code'")
 
             codeRec(code, parentList)
         } else if (nextChar == ']') {
@@ -76,7 +88,7 @@ object Day13 {
             error("")
         }
 
-        println("Result for '$nextChar' is '$result'")
+        //println("Result for '$nextChar' is '$result'")
         return result
     }
 }

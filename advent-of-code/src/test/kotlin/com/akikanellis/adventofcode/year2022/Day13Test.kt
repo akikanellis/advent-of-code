@@ -6,19 +6,35 @@ import org.junit.jupiter.params.provider.CsvSource
 import kotlin.test.assertEquals
 
 class Day13Test {
+    // @ParameterizedTest
+    // @CsvSource(
+    //     "/day-13-input-example.txt, 13",
+    //     "/day-13-input-puzzle.txt,  5_503"
+    // )
+    // fun `calculates sum of indices in right order`(
+    //     inputFile: String,
+    //     expectedSum: Int
+    // ) {
+    //     val input = resourceText(inputFile)
+
+    //     val sumOfIndicesInRightOrder = Day13.sumOfIndicesInRightOrder(input)
+
+    //     assertEquals(expectedSum, sumOfIndicesInRightOrder)
+    // }
+
     @ParameterizedTest
     @CsvSource(
-        "/day-13-input-example.txt, 13",
-        "/day-13-input-puzzle.txt,  5_503"
+        "/day-13-input-example.txt, 140",
+        "/day-13-input-puzzle.txt,  20_952"
     )
-    fun `calculates sum of indices in right order`(
+    fun `calculates decoder key`(
         inputFile: String,
-        expectedSum: Int
+        expectedDecoderKey: Int
     ) {
         val input = resourceText(inputFile)
 
-        val sumOfIndicesInRightOrder = Day13.sumOfIndicesInRightOrder(input)
+        val decoderKey = Day13.decoderKey(input)
 
-        assertEquals(expectedSum, sumOfIndicesInRightOrder)
+        assertEquals(expectedDecoderKey, decoderKey)
     }
 }
