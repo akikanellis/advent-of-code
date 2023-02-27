@@ -1,14 +1,14 @@
 package com.akikanellis.adventofcode.year2022
 
 object Day13 {
-    fun sumOfIndicesInRightOrder(input: String) = input.
+    fun sumOfIndicesInRightOrder(input: String) = input
         .split("\n\n")
         .filter { it.isNotBlank() }
         .map { pair -> pair.split("\n") }
         .map { Pair(codes(it[0]), codes(it[1])) }
-        .mapIndexed { index, pair -> Pair(index + 1, pair) }
-        .filter { (_, pair) -> rightOrder(pair.first, pair.second)!! }
-        .sumOf { it.first }
+        .mapIndexed { index, pair -> Triple(index + 1, pair.first, pair.second) }
+        .filter { (_, left, right) -> rightOrder(left, right)!! }
+        .sumOf { (index, _, _) -> index }
 
     private fun rightOrder(left: Any?, right: Any?): Boolean? {
         println("Comparing: left='$left', right='$right'")
@@ -32,8 +32,10 @@ object Day13 {
                     right.drop(1).ifEmpty { null })
         } else if (left is Int && right is List<*>) {
             rightOrder(listOf(left), right)
-        } else {
+        } else if (left is List<*> && right is Int) {
             rightOrder(left, listOf(right))
+        } else {
+            error("Uh oh")
         }
 
         return result.also { println("Returning '$it' for comparison left='$left', right='$right''") }
@@ -56,7 +58,17 @@ object Day13 {
         } else if (nextChar == ',') {
             codeRec(code, parentList)
         } else if (nextChar.isDigit()) {
-            parentList.add(nextChar.digitToInt())
+            println("nextChar='$nextChar', code='$code'")
+
+            val numberString = (listOf(nextChar) + code.takeWhile { it.isDigit() }).joinToString("")
+            
+            
+            parentList.add(numberString.toInt())
+
+            if (numberString.length > 1) (0..numberString.length - 2).forEach { code.removeAt(it) }
+
+            println("numberString='$numberString', code='$code'")
+
             codeRec(code, parentList)
         } else if (nextChar == ']') {
             parentList.toList()

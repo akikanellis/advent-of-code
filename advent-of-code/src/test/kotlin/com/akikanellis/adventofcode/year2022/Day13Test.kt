@@ -9,7 +9,7 @@ class Day13Test {
     @ParameterizedTest
     @CsvSource(
         "/day-13-input-example.txt, 13",
-        "/day-13-input-puzzle.txt,  5_430"
+        "/day-13-input-puzzle.txt,  5_503"
     )
     fun `calculates sum of indices in right order`(
         inputFile: String,
