@@ -1,7 +1,7 @@
 package com.akikanellis.adventofcode.year2022
 
 object Day13 {
-    fun sumOfIndicesInRightOrder(input: String) = input
+    fun sumOfIndicesInRightOrder(input: String) = input.
         .split("\n\n")
         .filter { it.isNotBlank() }
         .map { pair -> pair.split("\n") }

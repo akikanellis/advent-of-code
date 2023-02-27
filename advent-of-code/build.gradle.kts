@@ -25,7 +25,7 @@ kotlin {
         val javaVersion = "17.0.6+10"
         val javaMajorVersion = javaVersion.split(".").first()
 
-        vendor.set(JvmVendorSpec.ADOPTIUM)
+        //vendor.set(JvmVendorSpec.ADOPTIUM)
         languageVersion.set(JavaLanguageVersion.of(javaMajorVersion))
     }
 }
