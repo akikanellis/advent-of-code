@@ -34,7 +34,7 @@
       // eslint-disable-next-line jsonc/no-useless-escape
       fileMatch: ["(^|/)\.tool-versions$"],
       matchStrings: ["java\\s+temurin-(?<currentValue>.+)(\\s+|\\s+.*)"],
-      datasourceTemplate: "adoptium-java",
+      datasourceTemplate: "java-version",
       depNameTemplate: "java"
     },
     {

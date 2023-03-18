@@ -19,7 +19,7 @@ jobs:
         uses: actions/setup-java@3f07048e3d294f56e9b90ac5ea2c6f74e9ad0f98 # v3.10.0
         with:
           distribution: temurin
-          # renovate: datasource=adoptium-java depName=java
+          # renovate: datasource=java-version depName=java
           java-version: 17.0.6+10
 
       - name: Test
