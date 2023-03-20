@@ -1,6 +1,6 @@
 package com.akikanellis.adventofcode.year2022
 
-import com.akikanellis.adventofcode.utils.resourceText
+import com.akikanellis.adventofcode.testutils.resourceText
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvSource
 import kotlin.test.assertEquals
