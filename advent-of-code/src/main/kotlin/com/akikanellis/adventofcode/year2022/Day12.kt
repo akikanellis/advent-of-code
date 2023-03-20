@@ -1,5 +1,7 @@
 package com.akikanellis.adventofcode.year2022
 
+import com.akikanellis.adventofcode.year2022.utils.Point
+
 object Day12 {
     fun shortestPathSteps(input: String, ascending: Boolean): Int {
         val squares = squares(input)
@@ -22,8 +24,7 @@ object Day12 {
             .mapIndexed { rowIndex, row ->
                 row.mapIndexed { columnIndex, heightmapCharacter ->
                     Square(
-                        x = columnIndex,
-                        y = rowIndex,
+                        position = Point(columnIndex, rowIndex),
                         heightmapCharacter = heightmapCharacter
                     )
                 }
@@ -89,12 +90,13 @@ object Day12 {
     }
 
     private data class Square(
-        val x: Int,
-        val y: Int,
+        val position: Point,
         val heightmapCharacter: Char,
         var visited: Boolean = false,
         var parent: Square? = null
     ) {
+        val x = position.x
+        val y = position.y
         val neighbours = mutableListOf<Square>()
         val elevation = when (heightmapCharacter) {
             'S' -> 'a'

@@ -1,5 +1,7 @@
 package com.akikanellis.adventofcode.year2022
 
+import com.akikanellis.adventofcode.year2022.utils.Point
+
 object Day14 {
     private val SAND_STARTING_POINT = Point(500, 0)
 
@@ -79,10 +81,4 @@ object Day14 {
         maxX: Int,
         maxY: Int
     ) = (minX - maxY..maxX + maxY).map { x -> Point(x, maxY + 2) }
-
-    data class Point(val x: Int, val y: Int) {
-        fun plusX() = Point(x + 1, y)
-        fun minusX() = Point(x - 1, y)
-        fun plusY() = Point(x, y + 1)
-    }
 }

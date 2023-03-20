@@ -1,5 +1,7 @@
 package com.akikanellis.adventofcode.year2022
 
+import com.akikanellis.adventofcode.year2022.utils.Point
+
 object Day10 {
     fun sumOfSignalStrengths(input: String): Int {
         val cyclesOfInterest = IntProgression.fromClosedRange(20, 220, 40)
@@ -89,19 +91,19 @@ object Day10 {
 
         fun drawNextPixel(sprite: IntRange): Crt {
             val nextPixelPosition = nextPixelPosition()
-            val nextPixelCharacter = if (sprite.contains(nextPixelPosition.first)) '#' else '.'
+            val nextPixelCharacter = if (sprite.contains(nextPixelPosition.x)) '#' else '.'
 
             return copy(drawnPixels = drawnPixels + Pixel(nextPixelPosition, nextPixelCharacter))
         }
 
         private fun nextPixelPosition() = when {
-            lastDrawnPixel == null -> Pair(0, 0)
-            reachedTheEdge(lastDrawnPixel) -> Pair(0, lastDrawnPixel.position.second + 1)
-            else -> Pair(lastDrawnPixel.position.first + 1, lastDrawnPixel.position.second)
+            lastDrawnPixel == null -> Point.ZERO
+            reachedTheEdge(lastDrawnPixel) -> lastDrawnPixel.position.zeroX().plusY()
+            else -> lastDrawnPixel.position.plusX()
         }
 
         private fun reachedTheEdge(lastDrawnPixel: Pixel) =
-            size.first - lastDrawnPixel.position.first == 1
+            size.first - lastDrawnPixel.position.x == 1
 
         fun displayOutput() = drawnPixels
             .chunked(size.first)
@@ -112,5 +114,5 @@ object Day10 {
             }
     }
 
-    data class Pixel(val position: Pair<Int, Int>, val character: Char = ' ')
+    data class Pixel(val position: Point, val character: Char = ' ')
 }

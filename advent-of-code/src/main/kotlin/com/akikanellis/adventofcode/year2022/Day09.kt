@@ -1,5 +1,6 @@
 package com.akikanellis.adventofcode.year2022
 
+import com.akikanellis.adventofcode.year2022.utils.Point
 import kotlin.math.absoluteValue
 
 object Day09 {
@@ -34,18 +35,18 @@ object Day09 {
     }
 
     private data class Knot(
-        val currentPosition: Pair<Int, Int> = Pair(0, 0),
-        val positionsVisited: Set<Pair<Int, Int>> = setOf(currentPosition)
+        val currentPosition: Point = Point.ZERO,
+        val positionsVisited: Set<Point> = setOf(currentPosition)
     ) {
-        val x = currentPosition.first
-        val y = currentPosition.second
+        val x = currentPosition.x
+        val y = currentPosition.y
 
         fun move(direction: Direction): Knot {
             val newPosition = when (direction) {
-                Direction.U -> currentPosition.copy(second = y + 1)
-                Direction.D -> currentPosition.copy(second = y - 1)
-                Direction.L -> currentPosition.copy(first = x - 1)
-                Direction.R -> currentPosition.copy(first = x + 1)
+                Direction.U -> currentPosition.plusY()
+                Direction.D -> currentPosition.minusY()
+                Direction.L -> currentPosition.minusX()
+                Direction.R -> currentPosition.plusX()
             }
 
             return Knot(
@@ -58,13 +59,13 @@ object Day09 {
             if (touches(otherKnot)) return this
 
             val newPosition =
-                Pair(
-                    first = when {
+                Point(
+                    x = when {
                         otherKnot.x > x -> x + 1
                         otherKnot.x < x -> x - 1
                         else -> x
                     },
-                    second = when {
+                    y = when {
                         otherKnot.y > y -> y + 1
                         otherKnot.y < y -> y - 1
                         else -> y
