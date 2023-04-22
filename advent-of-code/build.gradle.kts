@@ -22,7 +22,7 @@ dependencies {
 kotlin {
     jvmToolchain {
         // renovate: datasource=java-version depName=java
-        val javaVersion = "17.0.6+10"
+        val javaVersion = "17.0.7+7"
         val javaMajorVersion = javaVersion.split(".").first()
 
         vendor.set(JvmVendorSpec.ADOPTIUM)
