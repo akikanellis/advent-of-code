@@ -1,3 +1,10 @@
+## [1.20.7](https://github.com/akikanellis/advent-of-code/compare/v1.20.6...v1.20.7) (2023-05-06)
+
+
+### Build System
+
+* **deps:** update renovate/renovate docker tag to v35.71.7 ([#63](https://github.com/akikanellis/advent-of-code/issues/63)) ([6c15b17](https://github.com/akikanellis/advent-of-code/commit/6c15b17dc65658885ea452d61465753e90a45886))
+
 ## [1.20.6](https://github.com/akikanellis/advent-of-code/compare/v1.20.5...v1.20.6) (2023-05-06)
 
 
