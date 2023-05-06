@@ -33,6 +33,6 @@ jobs:
         uses: renovatebot/github-action@fa4cccb9b990157df72db344d593086e58d7bd50 # v36.1.0
         with:
           # renovate: datasource=docker depName=renovate/renovate
-          renovate-version: 35.71.6
+          renovate-version: 35.71.7
           configurationFile: renovate.json5
           token: x-access-token:${{ steps.get-token.outputs.token }}
