@@ -1,3 +1,10 @@
+## [1.20.13](https://github.com/akikanellis/advent-of-code/compare/v1.20.12...v1.20.13) (2023-05-31)
+
+
+### Build System
+
+* **deps:** update renovatebot/github-action action to v38 ([#69](https://github.com/akikanellis/advent-of-code/issues/69)) ([629e2cf](https://github.com/akikanellis/advent-of-code/commit/629e2cfac3f7208987fe00a4cf731cd937f0c69b)), closes [renovatebot/github-action#753](https://github.com/renovatebot/github-action/issues/753)
+
 ## [1.20.12](https://github.com/akikanellis/advent-of-code/compare/v1.20.11...v1.20.12) (2023-05-27)
 
 
