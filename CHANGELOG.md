@@ -1,3 +1,10 @@
+## [1.20.17](https://github.com/akikanellis/advent-of-code/compare/v1.20.16...v1.20.17) (2023-06-10)
+
+
+### Build System
+
+* **deps:** update dependency conventional-changelog-conventionalcommits to v6 ([#73](https://github.com/akikanellis/advent-of-code/issues/73)) ([4df1293](https://github.com/akikanellis/advent-of-code/commit/4df12932e15d6392f626883464f6836656a48bf0))
+
 ## [1.20.16](https://github.com/akikanellis/advent-of-code/compare/v1.20.15...v1.20.16) (2023-06-10)
 
 
