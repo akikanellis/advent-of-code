@@ -1,3 +1,10 @@
+## [1.20.21](https://github.com/akikanellis/advent-of-code/compare/v1.20.20...v1.20.21) (2023-06-17)
+
+
+### Build System
+
+* simplify releases ([#77](https://github.com/akikanellis/advent-of-code/issues/77)) ([d0ac24d](https://github.com/akikanellis/advent-of-code/commit/d0ac24dc52aef8681dfe81f0e86b05fbf427414b)), closes [/github.com/actions/runner/issues/1492#issuecomment-1031669824](https://github.com/akikanellis//github.com/actions/runner/issues/1492/issues/issuecomment-1031669824)
+
 ## [1.20.20](https://github.com/akikanellis/advent-of-code/compare/v1.20.19...v1.20.20) (2023-06-17)
 
 
