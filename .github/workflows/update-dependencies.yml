@@ -33,6 +33,6 @@ jobs:
         uses: renovatebot/github-action@13d5bade1b209427c72a08dee34b078ddc99eeec # v38.1.6
         with:
           # renovate: datasource=docker depName=ghcr.io/renovatebot/renovate
-          renovate-version: 35.124.0
+          renovate-version: 35.124.1
           configurationFile: renovate.json5
           token: x-access-token:${{ steps.get-token.outputs.token }}
