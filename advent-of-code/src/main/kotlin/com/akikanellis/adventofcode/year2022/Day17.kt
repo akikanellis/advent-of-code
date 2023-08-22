@@ -2,6 +2,8 @@ package com.akikanellis.adventofcode.year2022
 
 import com.akikanellis.adventofcode.year2022.Day17.Direction.LEFT
 import com.akikanellis.adventofcode.year2022.Day17.Direction.RIGHT
+import com.akikanellis.adventofcode.year2022.utils.CircularListIterator
+import com.akikanellis.adventofcode.year2022.utils.circularListIterator
 
 object Day17 {
     fun computeTowerHeight(input: String, amountOfRocksToFall: Long) =
@@ -237,31 +239,4 @@ object Day17 {
         val amountOfRocksThatHaveFallen: Long,
         val towerHeight: Long
     )
-
-    private class CircularListIterator<T>(private val list: List<T>) : ListIterator<T> {
-        private var index = 0
-
-        override fun hasNext() = list.isNotEmpty()
-
-        override fun nextIndex() = index
-
-        override fun next(): T {
-            if (!hasNext()) throw NoSuchElementException()
-            val element = list[nextIndex()]
-            index = (index + 1) % list.size
-            return element
-        }
-
-        override fun hasPrevious() = hasNext()
-
-        override fun previousIndex() = (((index - 1) % list.size) + list.size) % list.size
-
-        override fun previous(): T {
-            if (!hasPrevious()) throw NoSuchElementException()
-            index = previousIndex()
-            return list[index]
-        }
-    }
-
-    private fun <T> List<T>.circularListIterator() = CircularListIterator(this)
 }
