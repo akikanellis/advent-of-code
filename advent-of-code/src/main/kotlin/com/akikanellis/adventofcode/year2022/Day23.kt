@@ -75,8 +75,11 @@ object Day23 {
                 .lines()
                 .flatMapIndexed { y, row ->
                     row.mapIndexedNotNull { x, tileType ->
-                        if (tileType == '#') Elf(Point(x, y))
-                        else null
+                        if (tileType == '#') {
+                            Elf(Point(x, y))
+                        } else {
+                            null
+                        }
                     }
                 }
                 .let { Grove(it) }

@@ -69,7 +69,6 @@ class CircularListIteratorTest {
         assertEquals(expectedPreviousElements, previousElements)
     }
 
-
     @ParameterizedTest
     @MethodSource("listsWithExpectedNextAndPreviousElements")
     fun `retrieves next and previous elements`(
