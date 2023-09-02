@@ -1,3 +1,10 @@
+## [1.22.12](https://github.com/akikanellis/advent-of-code/compare/v1.22.11...v1.22.12) (2023-09-02)
+
+
+### Build System
+
+* **deps:** update cycjimmy/semantic-release-action action to v4 ([#99](https://github.com/akikanellis/advent-of-code/issues/99)) ([9837cb1](https://github.com/akikanellis/advent-of-code/commit/9837cb112debda2407ca54bc021ea148afd58611))
+
 ## [1.22.11](https://github.com/akikanellis/advent-of-code/compare/v1.22.10...v1.22.11) (2023-09-02)
 
 
