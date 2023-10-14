@@ -1,3 +1,20 @@
+## [1.22.13](https://github.com/akikanellis/advent-of-code/compare/v1.22.12...v1.22.13) (2023-10-14)
+
+
+### Build System
+
+* allow latest semantic-release ([#108](https://github.com/akikanellis/advent-of-code/issues/108)) ([f944137](https://github.com/akikanellis/advent-of-code/commit/f944137fc3796b960b04174c44564751f2be011b))
+* **deps:** update actions/checkout action to v4 ([#102](https://github.com/akikanellis/advent-of-code/issues/102)) ([79a907b](https://github.com/akikanellis/advent-of-code/commit/79a907b2b88fd5d54edbb6a0b4366dbd0dd964a7))
+* **deps:** update all non-major dependencies ([#101](https://github.com/akikanellis/advent-of-code/issues/101)) ([2a669fd](https://github.com/akikanellis/advent-of-code/commit/2a669fdc44e01486db74837dc890631656082448))
+* **deps:** update all non-major dependencies ([#104](https://github.com/akikanellis/advent-of-code/issues/104)) ([2084e83](https://github.com/akikanellis/advent-of-code/commit/2084e83d5853d58abee194d277061d4ffc7773f2))
+* **deps:** update all non-major dependencies ([#105](https://github.com/akikanellis/advent-of-code/issues/105)) ([ef07591](https://github.com/akikanellis/advent-of-code/commit/ef075914974c99bb525c78929057a41098d12fa0))
+* **deps:** update all non-major dependencies ([#107](https://github.com/akikanellis/advent-of-code/issues/107)) ([ee17973](https://github.com/akikanellis/advent-of-code/commit/ee1797341080328698ddb39fd2bed0d49694121c))
+* **deps:** update dependency conventional-changelog-conventionalcommits to v7 ([#100](https://github.com/akikanellis/advent-of-code/issues/100)) ([d90e95b](https://github.com/akikanellis/advent-of-code/commit/d90e95b761cf6b73a6bcd1cb99073a5c9726d97e))
+* **deps:** update dependency semantic-release to v22 ([#109](https://github.com/akikanellis/advent-of-code/issues/109)) ([c939a06](https://github.com/akikanellis/advent-of-code/commit/c939a0660b06014282dcb0650cc9b97a725bc460))
+* **deps:** update ghcr.io/renovatebot/renovate docker tag to v36.94.4 ([#103](https://github.com/akikanellis/advent-of-code/issues/103)) ([fef96a6](https://github.com/akikanellis/advent-of-code/commit/fef96a65d63e085afe10542fcf94a553f7907fd1))
+* limit semantic-release and plugins versions ([#111](https://github.com/akikanellis/advent-of-code/issues/111)) ([036d0bd](https://github.com/akikanellis/advent-of-code/commit/036d0bde124fdbeca17b929cc29149b1357bb7c1))
+* limit semantic-release to 21.x.x ([#110](https://github.com/akikanellis/advent-of-code/issues/110)) ([be851a0](https://github.com/akikanellis/advent-of-code/commit/be851a0375f0d07412e959d1f36f27f9ff3bdc7b))
+
 ## [1.22.12](https://github.com/akikanellis/advent-of-code/compare/v1.22.11...v1.22.12) (2023-09-02)
 
 
