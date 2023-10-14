@@ -71,11 +71,12 @@ semver-coerced\
       automerge: false
     },
     {
-      description: "Limit gradle-semantic-release-plugin versions to 1.7.4.\
-      Version 1.7.5 is currently only compatible with semantic-release >= 20",
+      description: "Limit semantic-release versions to 21.x.x.\
+      Version 22.0.0 is not currently compatible with\
+      gradle-semantic-release-plugin",
       matchDatasources: ["npm"],
-      matchPackageNames: ["gradle-semantic-release-plugin"],
-      allowedVersions: "<= 1.7.4"
+      matchPackageNames: ["semantic-release"],
+      allowedVersions: "<= 21"
     },
     {
       description: "Use correct compatibility for github/super-linter",
