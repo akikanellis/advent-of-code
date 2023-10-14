@@ -16,7 +16,7 @@ env:
   CONVENTIONAL_CHANGELOG_CONVENTIONALCOMMITS_VERSION: 7.0.2
 
   # renovate: datasource=npm depName=gradle-semantic-release-plugin
-  GRADLE_SEMANTIC_RELEASE_PLUGIN_VERSION: 1.7.4
+  GRADLE_SEMANTIC_RELEASE_PLUGIN_VERSION: 1.7.7
 
 jobs:
   lint:
@@ -71,7 +71,7 @@ jobs:
           GIT_COMMITTER_EMAIL: 103840025+aki-bot[bot]@users.noreply.github.com
         with:
           # renovate: datasource=npm depName=semantic-release
-          semantic_version: 22.0.5
+          semantic_version: 21.0.2
           extra_plugins:
             "@semantic-release/changelog@\
             ${{ env.SEMANTIC_RELEASE_CHANGELOG_VERSION }} \
