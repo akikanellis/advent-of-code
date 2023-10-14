@@ -71,14 +71,6 @@ semver-coerced\
       automerge: false
     },
     {
-      description: "Limit semantic-release versions to 19.x.x.\
-      Version 20.0.0 is not currently compatible with\
-      cycjimmy/semantic-release-action",
-      matchDatasources: ["npm"],
-      matchPackageNames: ["semantic-release"],
-      allowedVersions: "<= 19"
-    },
-    {
       description: "Limit gradle-semantic-release-plugin versions to 1.7.4.\
       Version 1.7.5 is currently only compatible with semantic-release >= 20",
       matchDatasources: ["npm"],
