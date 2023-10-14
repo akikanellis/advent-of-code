@@ -71,7 +71,7 @@ jobs:
           GIT_COMMITTER_EMAIL: 103840025+aki-bot[bot]@users.noreply.github.com
         with:
           # renovate: datasource=npm depName=semantic-release
-          semantic_version: 19.0.5
+          semantic_version: 22.0.5
           extra_plugins:
             "@semantic-release/changelog@\
             ${{ env.SEMANTIC_RELEASE_CHANGELOG_VERSION }} \
