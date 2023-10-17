@@ -1,3 +1,10 @@
+## [1.22.15](https://github.com/akikanellis/advent-of-code/compare/v1.22.14...v1.22.15) (2023-10-17)
+
+
+### Build System
+
+* update super-linter org ([#112](https://github.com/akikanellis/advent-of-code/issues/112)) ([7c3b037](https://github.com/akikanellis/advent-of-code/commit/7c3b0377f6ca728b4f635a037f0359081994e7c6))
+
 ## [1.22.14](https://github.com/akikanellis/advent-of-code/compare/v1.22.13...v1.22.14) (2023-10-14)
 
 
