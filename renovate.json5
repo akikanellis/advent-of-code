@@ -21,7 +21,7 @@
   requireConfig: "required",
   automerge: true,
   schedule: ["after 3:00 and before 6:00 on Saturday"],
-  regexManagers: [
+  customManagers: [
     {
       description: "Update Java in .tool-versions.\
       The asdf manager for renovate does not currently support the temurin\
@@ -29,6 +29,7 @@
       See:\
         * https://github.com/renovatebot/renovate/issues/19183\
         * https://github.com/renovatebot/renovate/issues/19184",
+      customType: "regex",
       // eslint-disable-next-line jsonc/no-useless-escape
       fileMatch: ["(^|/)\.tool-versions$"],
       matchStrings: ["java\\s+temurin-(?<currentValue>.+)(\\s+|\\s+.*)"],
@@ -37,6 +38,7 @@
     },
     {
       description: "Any other file with dependencies",
+      customType: "regex",
       fileMatch: [
         /* eslint-disable jsonc/no-useless-escape */
         "(^|/)justfile$",
@@ -94,9 +96,10 @@ semver-coerced\
       allowedVersions: "<= 1.7.7"
     },
     {
-      description: "Use correct compatibility for github/super-linter",
+      description: "Use correct compatibility for\
+      ghcr.io/super-linter/super-linter",
       matchDatasources: ["docker"],
-      matchPackageNames: ["github/super-linter"],
+      matchPackageNames: ["ghcr.io/super-linter/super-linter"],
       versioning: "\
 regex:\
 ^((?<compatibility>.+)-)?\
