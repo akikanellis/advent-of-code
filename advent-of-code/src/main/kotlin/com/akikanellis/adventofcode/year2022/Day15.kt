@@ -78,6 +78,4 @@ object Day15 {
                 abs(sensor.y - candidateDistressBeacon.y) +
                 1
         }
-
-    private fun Point.manhattanDistance(other: Point) = abs(x - other.x) + abs(y - other.y)
 }
