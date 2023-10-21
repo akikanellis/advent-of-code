@@ -1,3 +1,10 @@
+## [1.23.1](https://github.com/akikanellis/advent-of-code/compare/v1.23.0...v1.23.1) (2023-10-21)
+
+
+### Build System
+
+* **deps:** update ghcr.io/super-linter/super-linter:slim-v5.4.3 docker digest to dc71041 ([#115](https://github.com/akikanellis/advent-of-code/issues/115)) ([d0d3e8e](https://github.com/akikanellis/advent-of-code/commit/d0d3e8e06e124c1c4c4dd1edfbacd36cee7bfb89))
+
 ## [1.23.0](https://github.com/akikanellis/advent-of-code/compare/v1.22.15...v1.23.0) (2023-10-17)
 
 
