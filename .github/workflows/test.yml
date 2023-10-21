@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Checkout
         # yamllint disable-line rule:line-length
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Setup Java
         # yamllint disable-line rule:line-length
@@ -27,7 +27,7 @@ jobs:
         with:
           distribution: temurin
           # renovate: datasource=java-version depName=java
-          java-version: 17.0.8+101
+          java-version: 17.0.9+9
 
       - name: Test
         # yamllint disable-line rule:line-length
