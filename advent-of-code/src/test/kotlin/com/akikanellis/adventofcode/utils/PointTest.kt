@@ -27,6 +27,18 @@ class PointTest {
         assertEquals(expectedPointAfterPlusY, point.plusY())
     }
 
+    @ParameterizedTest
+    @MethodSource("manhattanDistances")
+    fun `calculates Manhattan distances`(
+        point: Point,
+        otherPoint: Point,
+        expectedManhattanDistance: Int
+    ) {
+        val manhattanDistance = point.manhattanDistance(otherPoint)
+
+        assertEquals(expectedManhattanDistance, manhattanDistance)
+    }
+
     companion object {
         @JvmStatic
         fun points() = listOf(
@@ -74,6 +86,40 @@ class PointTest {
                 Point(-5, 4),
                 Point(-5, 6)
             )
+        )
+
+        @JvmStatic
+        fun manhattanDistances() = listOf(
+            // Zero distance
+            Arguments.of(Point.ZERO, Point.ZERO, 0),
+            Arguments.of(
+                Point(Int.MIN_VALUE, Int.MIN_VALUE),
+                Point(Int.MIN_VALUE, Int.MIN_VALUE),
+                0
+            ),
+            Arguments.of(
+                Point(Int.MAX_VALUE, Int.MAX_VALUE),
+                Point(Int.MAX_VALUE, Int.MAX_VALUE),
+                0
+            ),
+
+            // Single axis
+            Arguments.of(Point.ZERO, Point(1, 0), 1),
+            Arguments.of(Point.ZERO, Point(0, 1), 1),
+            Arguments.of(Point.ZERO, Point(-1, 0), 1),
+            Arguments.of(Point.ZERO, Point(0, -1), 1),
+
+            // Diagonal
+            Arguments.of(Point(1, 2), Point(2, 1), 2),
+            Arguments.of(Point(2, 1), Point(1, 2), 2),
+            Arguments.of(Point(-1, -2), Point(-2, -1), 2),
+            Arguments.of(Point(-2, -1), Point(-1, -2), 2),
+            Arguments.of(Point(-1, 1), Point(1, -1), 4),
+
+            // Large distance
+            Arguments.of(Point(1, 2), Point(60, 74), 131),
+            Arguments.of(Point(15, 29), Point(60, 74), 90),
+            Arguments.of(Point(-15, -29), Point(-60, -74), 90)
         )
     }
 }
