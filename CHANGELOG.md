@@ -1,3 +1,15 @@
+## [1.25.1](https://github.com/akikanellis/advent-of-code/compare/v1.25.0...v1.25.1) (2023-11-04)
+
+
+### Documentation
+
+* add solutions in README ([#122](https://github.com/akikanellis/advent-of-code/issues/122)) ([ca14b2e](https://github.com/akikanellis/advent-of-code/commit/ca14b2e21f12293c96f56fd0f05f645b694636ee))
+
+
+### Build System
+
+* **deps:** update all non-major dependencies ([#123](https://github.com/akikanellis/advent-of-code/issues/123)) ([ba365f5](https://github.com/akikanellis/advent-of-code/commit/ba365f59ed58565f7b1e9f76b73dbf5323d14d37))
+
 ## [1.25.0](https://github.com/akikanellis/advent-of-code/compare/v1.24.0...v1.25.0) (2023-10-30)
 
 
