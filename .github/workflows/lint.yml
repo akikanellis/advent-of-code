@@ -25,7 +25,7 @@ jobs:
 
       - name: Lint
         # yamllint disable-line rule:line-length
-        uses: super-linter/super-linter/slim@40b5a7da512c6686fd1bf3130dc972cbf32008d7 # v5.5.0
+        uses: super-linter/super-linter/slim@35c3fa445cc217dfcc7b53eeb4e7aa95fcdd02fc # v5.6.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BRANCH: main
