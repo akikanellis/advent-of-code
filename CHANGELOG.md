@@ -1,3 +1,10 @@
+## [1.25.7](https://github.com/akikanellis/advent-of-code/compare/v1.25.6...v1.25.7) (2023-12-02)
+
+
+### Build System
+
+* **deps:** update actions/setup-java action to v4 ([#129](https://github.com/akikanellis/advent-of-code/issues/129)) ([427631e](https://github.com/akikanellis/advent-of-code/commit/427631e63aabafa7719b5d2943947a78de11a9eb))
+
 ## [1.25.6](https://github.com/akikanellis/advent-of-code/compare/v1.25.5...v1.25.6) (2023-12-02)
 
 
