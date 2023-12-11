@@ -28,7 +28,7 @@ object Day23 {
 
     private data class Grove(
         val elves: List<Elf>,
-        val numberOfElvesThatMoved: Int = 0
+        val numberOfElvesThatMoved: Int = 0,
     ) {
         private val positionToElf = elves.associateBy { it.position }
 
@@ -66,7 +66,7 @@ object Day23 {
 
             return Grove(
                 elves = movedElves + stationedElves,
-                numberOfElvesThatMoved = numberOfElvesThatMoved
+                numberOfElvesThatMoved = numberOfElvesThatMoved,
             )
         }
 
@@ -112,7 +112,7 @@ object Day23 {
             override fun adjacentPositions(position: Point) = listOf(
                 position.minusY(),
                 position.minusY().plusX(),
-                position.minusY().minusX()
+                position.minusY().minusX(),
             )
 
             override fun nextPosition(position: Point) = position.minusY()
@@ -123,7 +123,7 @@ object Day23 {
             override fun adjacentPositions(position: Point) = listOf(
                 position.plusY(),
                 position.plusY().plusX(),
-                position.plusY().minusX()
+                position.plusY().minusX(),
             )
 
             override fun nextPosition(position: Point) = position.plusY()
@@ -134,7 +134,7 @@ object Day23 {
             override fun adjacentPositions(position: Point) = listOf(
                 position.minusX(),
                 position.minusY().minusX(),
-                position.plusY().minusX()
+                position.plusY().minusX(),
             )
 
             override fun nextPosition(position: Point) = position.minusX()
@@ -145,11 +145,12 @@ object Day23 {
             override fun adjacentPositions(position: Point) = listOf(
                 position.plusX(),
                 position.minusY().plusX(),
-                position.plusY().plusX()
+                position.plusY().plusX(),
             )
 
             override fun nextPosition(position: Point) = position.plusX()
-        };
+        },
+        ;
 
         abstract val directionsOrder: List<Direction>
 

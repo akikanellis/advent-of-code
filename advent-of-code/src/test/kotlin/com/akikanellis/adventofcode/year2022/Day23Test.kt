@@ -8,12 +8,12 @@ import kotlin.test.assertEquals
 class Day23Test {
     @ParameterizedTest
     @CsvSource(
-        "/day-23-input-example.txt, 110",
-        "/day-23-input-puzzle.txt,  3_966"
+        "/inputs/year2022/day-23-input-example.txt, 110",
+        "/inputs/year2022/day-23-input-puzzle.txt,  3_966",
     )
     fun `calculates number of empty ground tiles`(
         inputFile: String,
-        expectedNumberOfEmptyGroundTiles: Int
+        expectedNumberOfEmptyGroundTiles: Int,
     ) {
         val input = resourceText(inputFile)
 
@@ -24,13 +24,10 @@ class Day23Test {
 
     @ParameterizedTest
     @CsvSource(
-        "/day-23-input-example.txt, 20",
-        "/day-23-input-puzzle.txt,  933"
+        "/inputs/year2022/day-23-input-example.txt, 20",
+        "/inputs/year2022/day-23-input-puzzle.txt,  933",
     )
-    fun `finds round where no Elf moves`(
-        inputFile: String,
-        expectedRound: Int
-    ) {
+    fun `finds round where no Elf moves`(inputFile: String, expectedRound: Int) {
         val input = resourceText(inputFile)
 
         val roundWhereNoElfMoves = Day23.roundWhereNoElfMoves(input)

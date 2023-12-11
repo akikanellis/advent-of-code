@@ -8,15 +8,15 @@ import kotlin.test.assertEquals
 class Day09Test {
     @ParameterizedTest
     @CsvSource(
-        "/day-09-part-1-input-example.txt, 2,  13",
-        "/day-09-input-puzzle.txt,         2,  6_044",
-        "/day-09-part-2-input-example.txt, 10, 36",
-        "/day-09-input-puzzle.txt,         10, 2_384"
+        "/inputs/year2022/day-09-part-1-input-example.txt, 2,  13",
+        "/inputs/year2022/day-09-input-puzzle.txt,         2,  6_044",
+        "/inputs/year2022/day-09-part-2-input-example.txt, 10, 36",
+        "/inputs/year2022/day-09-input-puzzle.txt,         10, 2_384",
     )
     fun `finds number of positions the tail visited`(
         inputFile: String,
         numberOfKnots: Int,
-        expectedNumberOfPositions: Int
+        expectedNumberOfPositions: Int,
     ) {
         val input = resourceText(inputFile)
 

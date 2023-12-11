@@ -31,8 +31,8 @@ My solutions to [Advent of Code](https://adventofcode.com/)
 
 ## About
 
-My solutions to [Advent of Code](https://adventofcode.com/), an annual series of Christmas-themed programming puzzles
-released daily from December 1st to 25th.
+My solutions to [Advent of Code](https://adventofcode.com/), an annual series of
+Christmas-themed programming puzzles released daily from December 1st to 25th.
 
 <details>
     <summary>Click to view the solutions!</summary>

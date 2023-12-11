@@ -8,12 +8,12 @@ import kotlin.test.assertEquals
 class Day04Test {
     @ParameterizedTest
     @CsvSource(
-        "/day-04-input-example.txt, 2",
-        "/day-04-input-puzzle.txt,  509"
+        "/inputs/year2022/day-04-input-example.txt, 2",
+        "/inputs/year2022/day-04-input-puzzle.txt,  509",
     )
     fun `calculates number of fully overlapping pairs`(
         inputFile: String,
-        expectedNumberOfPairs: Int
+        expectedNumberOfPairs: Int,
     ) {
         val input = resourceText(inputFile)
 
@@ -24,12 +24,12 @@ class Day04Test {
 
     @ParameterizedTest
     @CsvSource(
-        "/day-04-input-example.txt, 4",
-        "/day-04-input-puzzle.txt,  870"
+        "/inputs/year2022/day-04-input-example.txt, 4",
+        "/inputs/year2022/day-04-input-puzzle.txt,  870",
     )
     fun `calculates number of partially overlapping pairs`(
         inputFile: String,
-        expectedNumberOfPairs: Int
+        expectedNumberOfPairs: Int,
     ) {
         val input = resourceText(inputFile)
 

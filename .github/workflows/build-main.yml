@@ -5,6 +5,8 @@ name: Build Main
   push:
     branches: [main]
 
+permissions: {}
+
 env:
   # renovate: datasource=npm depName=@semantic-release/changelog
   SEMANTIC_RELEASE_CHANGELOG_VERSION: 6.0.3
@@ -22,12 +24,20 @@ jobs:
   lint:
     name: Lint
     uses: ./.github/workflows/lint.yml
+
+    permissions:
+      contents: read
+
     with:
       continue-on-error: true
 
   test:
     name: Test
     uses: ./.github/workflows/test.yml
+
+    permissions:
+      contents: read
+
     with:
       continue-on-error: true
 
@@ -35,6 +45,9 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     concurrency: ${{ github.workflow }}-release
+
+    permissions:
+      contents: read
 
     outputs:
       release-published: ${{ steps.release.outputs.new_release_published }}
@@ -72,8 +85,7 @@ jobs:
         with:
           # renovate: datasource=npm depName=semantic-release
           semantic_version: 21.1.2
-          extra_plugins:
-            "@semantic-release/changelog@\
+          extra_plugins: "@semantic-release/changelog@\
             ${{ env.SEMANTIC_RELEASE_CHANGELOG_VERSION }} \
             @semantic-release/git@\
             ${{ env.SEMANTIC_RELEASE_GIT_VERSION }} \

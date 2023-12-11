@@ -8,12 +8,12 @@ import kotlin.test.assertEquals
 class Day03Test {
     @ParameterizedTest
     @CsvSource(
-        "/day-03-input-example.txt, 157",
-        "/day-03-input-puzzle.txt,  7_990"
+        "/inputs/year2022/day-03-input-example.txt, 157",
+        "/inputs/year2022/day-03-input-puzzle.txt,  7_990",
     )
     fun `calculates sum of priorities for misplaced item types`(
         inputFile: String,
-        expectedSumOfPriorities: Int
+        expectedSumOfPriorities: Int,
     ) {
         val input = resourceText(inputFile)
 
@@ -24,13 +24,10 @@ class Day03Test {
 
     @ParameterizedTest
     @CsvSource(
-        "/day-03-input-example.txt, 70",
-        "/day-03-input-puzzle.txt,  2_602"
+        "/inputs/year2022/day-03-input-example.txt, 70",
+        "/inputs/year2022/day-03-input-puzzle.txt,  2_602",
     )
-    fun `calculates sum of priorities for badges`(
-        inputFile: String,
-        expectedSumOfPriorities: Int
-    ) {
+    fun `calculates sum of priorities for badges`(inputFile: String, expectedSumOfPriorities: Int) {
         val input = resourceText(inputFile)
 
         val sumOfPrioritiesForBadges = Day03.sumOfPrioritiesForBadges(input)

@@ -1,0 +1,31 @@
+---
+APPLY_FIXES: all
+CLEAR_REPORT_FOLDER: true
+FLAVOR_SUGGESTIONS: false
+SHOW_ELAPSED_TIME: true
+
+VALIDATE_ALL_CODEBASE: false
+
+IGNORE_GENERATED_FILES: true
+FILTER_REGEX_EXCLUDE: "^(\
+  advent-of-code/src/test/resources/inputs/.+|\
+  CHANGELOG\\.md|\
+  gradlew(\\.bat)?\
+  )$"
+
+DISABLE_LINTERS:
+  # See: https://github.com/oxsecurity/megalinter/issues/2849
+  - REPOSITORY_DEVSKIM
+
+# MegaLinter has a bug that does not respect `threshold` option in JSCPD
+# See: https://github.com/oxsecurity/megalinter/issues/2450
+COPYPASTE_JSCPD_COMMAND_REMOVE_ARGUMENTS:
+  - --exitCode
+  - "1"
+
+# editorconfig-checker does not automatically detect *.json
+EDITORCONFIG_EDITORCONFIG_CHECKER_CONFIG_FILE: .ecrc.json
+
+# ktlint is very slow when run in file mode
+# See: https://github.com/oxsecurity/megalinter/issues/1441
+KOTLIN_KTLINT_CLI_LINT_MODE: project

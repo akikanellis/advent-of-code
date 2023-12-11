@@ -8,12 +8,12 @@ import kotlin.test.assertEquals
 class Day24Test {
     @ParameterizedTest
     @CsvSource(
-        "/day-24-input-example.txt, 18",
-        "/day-24-input-puzzle.txt,  286"
+        "/inputs/year2022/day-24-input-example.txt, 18",
+        "/inputs/year2022/day-24-input-puzzle.txt,  286",
     )
     fun `calculates fewest number of minutes required to reach the goal`(
         inputFile: String,
-        expectedNumberOfMinutes: Int
+        expectedNumberOfMinutes: Int,
     ) {
         val input = resourceText(inputFile)
 
@@ -24,12 +24,12 @@ class Day24Test {
 
     @ParameterizedTest
     @CsvSource(
-        "/day-24-input-example.txt, 54",
-        "/day-24-input-puzzle.txt,  820"
+        "/inputs/year2022/day-24-input-example.txt, 54",
+        "/inputs/year2022/day-24-input-puzzle.txt,  820",
     )
     fun `calculates fewest number of minutes required to reach all the goals`(
         inputFile: String,
-        expectedNumberOfMinutes: Int
+        expectedNumberOfMinutes: Int,
     ) {
         val input = resourceText(inputFile)
 

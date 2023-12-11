@@ -12,7 +12,7 @@ class Day25Test {
     @MethodSource("snafuNumbers")
     fun `converts from SNAFU to decimal and back`(
         originalSnafuNumber: String,
-        expectedDecimalNumber: Long
+        expectedDecimalNumber: Long,
     ) {
         val decimalNumber = Day25.toDecimal(originalSnafuNumber)
         val snafuNumber = Day25.toSnafu(decimalNumber)
@@ -23,13 +23,10 @@ class Day25Test {
 
     @ParameterizedTest
     @CsvSource(
-        "/day-25-input-example.txt, 2=-1=0",
-        "/day-25-input-puzzle.txt,  122-12==0-01=00-0=02"
+        "/inputs/year2022/day-25-input-example.txt, 2=-1=0",
+        "/inputs/year2022/day-25-input-puzzle.txt,  122-12==0-01=00-0=02",
     )
-    fun `calculates fuel needed in SNAFU`(
-        inputFile: String,
-        expectedFuelNeededInSnafu: String
-    ) {
+    fun `calculates fuel needed in SNAFU`(inputFile: String, expectedFuelNeededInSnafu: String) {
         val input = resourceText(inputFile)
 
         val fuelNeededInSnafu = Day25.fuelNeededInSnafu(input)
@@ -54,7 +51,7 @@ class Day25Test {
             Arguments.of("1-0", 20),
             Arguments.of("1=11-2", 2022),
             Arguments.of("1-0---0", 12345),
-            Arguments.of("1121-1110-1=0", 314159265)
+            Arguments.of("1121-1110-1=0", 314159265),
         )
     }
 }

@@ -8,12 +8,12 @@ import kotlin.test.assertEquals
 class Day13Test {
     @ParameterizedTest
     @CsvSource(
-        "/day-13-input-example.txt, 13",
-        "/day-13-input-puzzle.txt,  5_503"
+        "/inputs/year2022/day-13-input-example.txt, 13",
+        "/inputs/year2022/day-13-input-puzzle.txt,  5_503",
     )
     fun `calculates sum of packet pair indices in right order`(
         inputFile: String,
-        expectedSum: Int
+        expectedSum: Int,
     ) {
         val input = resourceText(inputFile)
 
@@ -24,13 +24,10 @@ class Day13Test {
 
     @ParameterizedTest
     @CsvSource(
-        "/day-13-input-example.txt, 140",
-        "/day-13-input-puzzle.txt,  20_952"
+        "/inputs/year2022/day-13-input-example.txt, 140",
+        "/inputs/year2022/day-13-input-puzzle.txt,  20_952",
     )
-    fun `calculates distress signal decoder key`(
-        inputFile: String,
-        expectedDecoderKey: Int
-    ) {
+    fun `calculates distress signal decoder key`(inputFile: String, expectedDecoderKey: Int) {
         val input = resourceText(inputFile)
 
         val distressSignalDecoderKey = Day13.distressSignalDecoderKey(input)

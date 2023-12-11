@@ -10,26 +10,20 @@ indent_size = 2
 indent_style = space
 
 insert_final_newline = true
+# editorconfig-checker does not enforce the max line length. The enforcement is
+# left to file type specific linter tools.
 max_line_length = 80
 trim_trailing_whitespace = true
-
-ij_visual_guides = 80
 
 [*.{kt,kts}]
 indent_size = 4
 max_line_length = 100
 
-ij_visual_guides = 100
+ktlint_code_style = intellij_idea
 
 ij_kotlin_name_count_to_use_star_import = 999
 ij_kotlin_name_count_to_use_star_import_for_members = 999
 
-[*.{markdown,md}]
-indent_size = 4
-max_line_length = off
-
 [*.{yaml,yml}]
-max_line_length = off
-
 ij_yaml_spaces_within_braces = false
 ij_yaml_spaces_within_brackets = false

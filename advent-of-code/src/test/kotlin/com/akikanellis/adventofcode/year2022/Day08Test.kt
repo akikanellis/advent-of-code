@@ -8,13 +8,10 @@ import kotlin.test.assertEquals
 class Day08Test {
     @ParameterizedTest
     @CsvSource(
-        "/day-08-input-example.txt, 21",
-        "/day-08-input-puzzle.txt,  1_829"
+        "/inputs/year2022/day-08-input-example.txt, 21",
+        "/inputs/year2022/day-08-input-puzzle.txt,  1_829",
     )
-    fun `finds number of visible trees`(
-        inputFile: String,
-        expectedNumberOfVisibleTrees: Int
-    ) {
+    fun `finds number of visible trees`(inputFile: String, expectedNumberOfVisibleTrees: Int) {
         val input = resourceText(inputFile)
 
         val numberOfVisibleTrees = Day08.numberOfVisibleTrees(input)
@@ -24,13 +21,10 @@ class Day08Test {
 
     @ParameterizedTest
     @CsvSource(
-        "/day-08-input-example.txt, 8",
-        "/day-08-input-puzzle.txt,  291_840"
+        "/inputs/year2022/day-08-input-example.txt, 8",
+        "/inputs/year2022/day-08-input-puzzle.txt,  291_840",
     )
-    fun `finds highest scenic score`(
-        inputFile: String,
-        expectedHighestScenicScore: Int
-    ) {
+    fun `finds highest scenic score`(inputFile: String, expectedHighestScenicScore: Int) {
         val input = resourceText(inputFile)
 
         val highestScenicScore = Day08.highestScenicScore(input)

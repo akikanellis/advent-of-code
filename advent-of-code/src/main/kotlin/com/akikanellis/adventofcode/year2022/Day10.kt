@@ -30,9 +30,9 @@ object Day10 {
                         cycle = 0,
                         sprite = (0..2),
                         signalStrength = 0,
-                        crt = Crt(Pair(40, 6))
-                    )
-                )
+                        crt = Crt(Pair(40, 6)),
+                    ),
+                ),
             ) { snapshots, cycle ->
                 val lastSnapshot = snapshots.last()
                 val lastSprite = lastSnapshot.sprite
@@ -52,7 +52,7 @@ object Day10 {
                     cycle = cycle,
                     sprite = sprite,
                     signalStrength = signalStrength,
-                    crt = crt
+                    crt = crt,
                 )
             }
     }
@@ -61,14 +61,14 @@ object Day10 {
         val cycle: Int,
         val sprite: IntRange,
         val signalStrength: Int,
-        val crt: Crt
+        val crt: Crt,
     )
 
     private data class Instruction(
         private val instruction: String,
         val name: String = instruction.split(" ")[0],
         val startingCost: Int = if (name == "addx") 2 else 1,
-        val remainingCost: Int = startingCost
+        val remainingCost: Int = startingCost,
     ) {
         fun decreasedCost() = copy(remainingCost = remainingCost - 1)
 
@@ -76,7 +76,7 @@ object Day10 {
             val valueToIncreaseSpriteBy = instruction.split(" ")[1].toInt()
             IntRange(
                 sprite.first + valueToIncreaseSpriteBy,
-                sprite.last + valueToIncreaseSpriteBy
+                sprite.last + valueToIncreaseSpriteBy,
             )
         } else {
             sprite
@@ -85,7 +85,7 @@ object Day10 {
 
     data class Crt(
         private val size: Pair<Int, Int>,
-        private val drawnPixels: List<Pixel> = emptyList()
+        private val drawnPixels: List<Pixel> = emptyList(),
     ) {
         private val lastDrawnPixel = drawnPixels.lastOrNull()
 

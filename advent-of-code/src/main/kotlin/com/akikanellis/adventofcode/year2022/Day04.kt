@@ -21,12 +21,12 @@ object Day04 {
             Pair(
                 IntRange(
                     firstSectionRange.substringBefore("-").toInt(),
-                    firstSectionRange.substringAfter("-").toInt()
+                    firstSectionRange.substringAfter("-").toInt(),
                 ),
                 IntRange(
                     secondSectionRange.substringBefore("-").toInt(),
-                    secondSectionRange.substringAfter("-").toInt()
-                )
+                    secondSectionRange.substringAfter("-").toInt(),
+                ),
             )
         }
 

@@ -13,11 +13,11 @@ class Day06Test {
         "bvwbjplbgvbhsrlpgdmjqwftvncz,      5",
         "nppdvjthqldpwncqszvftbrmjlhg,      6",
         "nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg, 10",
-        "zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw,  11"
+        "zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw,  11",
     )
     fun `finds the position of the first packet marker for examples`(
         input: String,
-        expectedPosition: Int
+        expectedPosition: Int,
     ) {
         val firstPacketMarkerPosition = Day06.firstPacketMarkerPosition(input)
 
@@ -26,7 +26,7 @@ class Day06Test {
 
     @Test
     fun `finds the position of the first packet marker for puzzle input`() {
-        val input = resourceText("/day-06-input-puzzle.txt")
+        val input = resourceText("/inputs/year2022/day-06-input-puzzle.txt")
 
         val firstPacketMarkerPosition = Day06.firstPacketMarkerPosition(input)
 
@@ -39,11 +39,11 @@ class Day06Test {
         "bvwbjplbgvbhsrlpgdmjqwftvncz,      23",
         "nppdvjthqldpwncqszvftbrmjlhg,      23",
         "nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg, 29",
-        "zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw,  26"
+        "zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw,  26",
     )
     fun `finds the position of the first message marker for examples`(
         input: String,
-        expectedPosition: Int
+        expectedPosition: Int,
     ) {
         val firstMessageMarkerPosition = Day06.firstMessageMarkerPosition(input)
 
@@ -52,7 +52,7 @@ class Day06Test {
 
     @Test
     fun `finds the position of the first message marker for puzzle`() {
-        val input = resourceText("/day-06-input-puzzle.txt")
+        val input = resourceText("/inputs/year2022/day-06-input-puzzle.txt")
 
         val firstMessageMarkerPosition = Day06.firstMessageMarkerPosition(input)
 

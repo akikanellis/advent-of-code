@@ -25,18 +25,18 @@ object Day13 {
         .map { (leftPacketText, rightPacketText) ->
             Pair(
                 packet(leftPacketText),
-                packet(rightPacketText)
+                packet(rightPacketText),
             )
         }
 
     private fun packet(packetText: String) = packetData(
         remainingPacketText = packetText.toMutableList().also { it.removeAt(0) },
-        currentPacketList = mutableListOf()
+        currentPacketList = mutableListOf(),
     )
 
     private fun packetData(
         remainingPacketText: MutableList<Char>,
-        currentPacketList: MutableList<Any>
+        currentPacketList: MutableList<Any>,
     ): List<Any> {
         val nextPacketPart = remainingPacketText.removeAt(0)
 
@@ -77,7 +77,7 @@ object Day13 {
             rightOrder(leftPacketPart.firstOrNull(), rightPacketPart.firstOrNull())
                 ?: rightOrder(
                     leftPacketPart.drop(1).ifEmpty { null },
-                    rightPacketPart.drop(1).ifEmpty { null }
+                    rightPacketPart.drop(1).ifEmpty { null },
                 )
         } else if (leftPacketPart is Int && rightPacketPart is Int) {
             when {
@@ -91,7 +91,7 @@ object Day13 {
             rightOrder(leftPacketPart, listOf(rightPacketPart))
         } else {
             error(
-                "Unsupported packet parts. Left: '$leftPacketPart', right: '$rightPacketPart'"
+                "Unsupported packet parts. Left: '$leftPacketPart', right: '$rightPacketPart'",
             )
         }
 }

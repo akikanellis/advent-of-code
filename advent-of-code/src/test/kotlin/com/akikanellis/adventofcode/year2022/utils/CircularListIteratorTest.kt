@@ -35,17 +35,14 @@ class CircularListIteratorTest {
 
     @ParameterizedTest
     @MethodSource("listsWithExpectedNextElements")
-    fun `retrieves next elements`(
-        list: List<Int>,
-        expectedNextElements: List<Int>
-    ) {
+    fun `retrieves next elements`(list: List<Int>, expectedNextElements: List<Int>) {
         val circularListIterator = list.circularListIterator()
 
         val nextElements = listOf(
             circularListIterator.next(),
             circularListIterator.next(),
             circularListIterator.next(),
-            circularListIterator.next()
+            circularListIterator.next(),
         )
 
         assertEquals(expectedNextElements, nextElements)
@@ -53,17 +50,14 @@ class CircularListIteratorTest {
 
     @ParameterizedTest
     @MethodSource("listsWithExpectedPreviousElements")
-    fun `retrieves previous elements`(
-        list: List<Int>,
-        expectedPreviousElements: List<Int>
-    ) {
+    fun `retrieves previous elements`(list: List<Int>, expectedPreviousElements: List<Int>) {
         val circularListIterator = list.circularListIterator()
 
         val previousElements = listOf(
             circularListIterator.previous(),
             circularListIterator.previous(),
             circularListIterator.previous(),
-            circularListIterator.previous()
+            circularListIterator.previous(),
         )
 
         assertEquals(expectedPreviousElements, previousElements)
@@ -73,7 +67,7 @@ class CircularListIteratorTest {
     @MethodSource("listsWithExpectedNextAndPreviousElements")
     fun `retrieves next and previous elements`(
         list: List<Int>,
-        expectedNextAndPreviousElements: List<Int>
+        expectedNextAndPreviousElements: List<Int>,
     ) {
         val circularListIterator = list.circularListIterator()
 
@@ -81,7 +75,7 @@ class CircularListIteratorTest {
             circularListIterator.next(),
             circularListIterator.next(),
             circularListIterator.previous(),
-            circularListIterator.previous()
+            circularListIterator.previous(),
         )
 
         assertEquals(expectedNextAndPreviousElements, nextAndPreviousElements)
@@ -92,21 +86,21 @@ class CircularListIteratorTest {
         fun listsWithExpectedNextElements() = listOf(
             Arguments.of(listOf(1), listOf(1, 1, 1, 1)),
             Arguments.of(listOf(1, 2), listOf(1, 2, 1, 2)),
-            Arguments.of(listOf(1, 2, 3), listOf(1, 2, 3, 1))
+            Arguments.of(listOf(1, 2, 3), listOf(1, 2, 3, 1)),
         )
 
         @JvmStatic
         fun listsWithExpectedPreviousElements() = listOf(
             Arguments.of(listOf(1), listOf(1, 1, 1, 1)),
             Arguments.of(listOf(1, 2), listOf(2, 1, 2, 1)),
-            Arguments.of(listOf(1, 2, 3), listOf(3, 2, 1, 3))
+            Arguments.of(listOf(1, 2, 3), listOf(3, 2, 1, 3)),
         )
 
         @JvmStatic
         fun listsWithExpectedNextAndPreviousElements() = listOf(
             Arguments.of(listOf(1), listOf(1, 1, 1, 1)),
             Arguments.of(listOf(1, 2), listOf(1, 2, 2, 1)),
-            Arguments.of(listOf(1, 2, 3), listOf(1, 2, 2, 1))
+            Arguments.of(listOf(1, 2, 3), listOf(1, 2, 2, 1)),
         )
     }
 }

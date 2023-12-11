@@ -19,7 +19,7 @@ object Day16 {
 
         return Valves(
             valves = valves,
-            elephantWillHelp = elephantWillHelp
+            elephantWillHelp = elephantWillHelp,
         )
     }
 
@@ -30,9 +30,9 @@ object Day16 {
             Pair(
                 Valve(
                     name = groupValues[1],
-                    flowRate = groupValues[2].toInt()
+                    flowRate = groupValues[2].toInt(),
                 ),
-                groupValues[3].split(", ")
+                groupValues[3].split(", "),
             )
         }
 
@@ -50,7 +50,7 @@ object Day16 {
                 val precomputedDistanceToCurrentValveNeighbour =
                     valveNameToShortestDistance.getOrDefault(
                         currentValveNeighbour.name,
-                        Int.MAX_VALUE
+                        Int.MAX_VALUE,
                     )
 
                 if (
@@ -71,16 +71,16 @@ object Day16 {
         val startValve: Valve,
         val openableValves: Set<Valve>,
         val elephantWillHelp: Boolean,
-        val elephantIsHelping: Boolean
+        val elephantIsHelping: Boolean,
     ) {
         constructor(
             valves: List<Valve>,
-            elephantWillHelp: Boolean
+            elephantWillHelp: Boolean,
         ) : this(
             startValve = valves.single { it.name == "AA" },
             openableValves = valves.filter { it.flowRate > 0 }.toSet(),
             elephantWillHelp = elephantWillHelp,
-            elephantIsHelping = false
+            elephantIsHelping = false,
         )
 
         val totalMinutes = if (elephantWillHelp || elephantIsHelping) 26 else 30
@@ -89,19 +89,19 @@ object Day16 {
         fun highestPressureThanCanBeReleased() = highestPressureThanCanBeReleased(
             remainingMinutes = totalMinutes,
             currentValve = startValve,
-            remainingValves = openableValves
+            remainingValves = openableValves,
         )
 
         private fun highestPressureThanCanBeReleased(
             remainingMinutes: Int,
             currentValve: Valve,
-            remainingValves: Set<Valve>
+            remainingValves: Set<Valve>,
         ): Int {
             val currentValvePressure = remainingMinutes * currentValve.flowRate
             val currentSystemState = SystemState(
                 currentValveName = currentValve.name,
                 remainingMinutes = remainingMinutes,
-                remainingValves = remainingValves
+                remainingValves = remainingValves,
             )
 
             return currentValvePressure + precomputedSystemStateToMaxPressure
@@ -117,7 +117,7 @@ object Day16 {
                             highestPressureThanCanBeReleased(
                                 remainingMinutes = remainingMinutesForNextValve,
                                 currentValve = nextValve,
-                                remainingValves = remainingValves - nextValve
+                                remainingValves = remainingValves - nextValve,
                             )
                         } ?: 0
 
@@ -128,8 +128,8 @@ object Day16 {
                                 startValve = startValve,
                                 openableValves = remainingValves,
                                 elephantWillHelp = false,
-                                elephantIsHelping = true
-                            ).highestPressureThanCanBeReleased()
+                                elephantIsHelping = true,
+                            ).highestPressureThanCanBeReleased(),
                         )
                     } else {
                         remainingValvesMaxPressure
@@ -148,6 +148,6 @@ object Day16 {
     private data class SystemState(
         val currentValveName: String,
         val remainingMinutes: Int,
-        val remainingValves: Set<Valve>
+        val remainingValves: Set<Valve>,
     )
 }

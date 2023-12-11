@@ -36,7 +36,7 @@ object Day09 {
 
     private data class Knot(
         val currentPosition: Point = Point.ZERO,
-        val positionsVisited: Set<Point> = setOf(currentPosition)
+        val positionsVisited: Set<Point> = setOf(currentPosition),
     ) {
         val x = currentPosition.x
         val y = currentPosition.y
@@ -51,7 +51,7 @@ object Day09 {
 
             return Knot(
                 currentPosition = newPosition,
-                positionsVisited = positionsVisited + newPosition
+                positionsVisited = positionsVisited + newPosition,
             )
         }
 
@@ -69,12 +69,12 @@ object Day09 {
                         otherKnot.y > y -> y + 1
                         otherKnot.y < y -> y - 1
                         else -> y
-                    }
+                    },
                 )
 
             return Knot(
                 currentPosition = newPosition,
-                positionsVisited = positionsVisited + newPosition
+                positionsVisited = positionsVisited + newPosition,
             )
         }
 

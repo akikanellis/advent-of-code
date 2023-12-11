@@ -14,8 +14,8 @@ object Day24 {
         return numberOfMinutesToReachAllGoals(
             valleyIdsToValleys,
             listOf(
-                Pair(entrance, exit)
-            )
+                Pair(entrance, exit),
+            ),
         )
     }
 
@@ -30,8 +30,8 @@ object Day24 {
             listOf(
                 Pair(entrance, exit),
                 Pair(exit, entrance),
-                Pair(entrance, exit)
-            )
+                Pair(entrance, exit),
+            ),
         )
     }
 
@@ -46,7 +46,7 @@ object Day24 {
 
     private fun numberOfMinutesToReachAllGoals(
         valleyIdsToValleys: Map<Int, Valley>,
-        startsToGoals: List<Pair<Point, Point>>
+        startsToGoals: List<Pair<Point, Point>>,
     ) = startsToGoals
         .fold(0) { minutesPassed, startToGoal ->
             minutesPassed + numberOfMinutesToReachGoal(
@@ -54,7 +54,7 @@ object Day24 {
                     .getValue(minutesPassed % valleyIdsToValleys.size),
                 valleyIdsToValleys = valleyIdsToValleys,
                 start = startToGoal.first,
-                goal = startToGoal.second
+                goal = startToGoal.second,
             )
         }
 
@@ -62,7 +62,7 @@ object Day24 {
         initialValley: Valley,
         valleyIdsToValleys: Map<Int, Valley>,
         start: Point,
-        goal: Point
+        goal: Point,
     ): Int {
         val seenStates = mutableSetOf<SystemState>()
         val statesQueue = PriorityQueue(
@@ -71,9 +71,9 @@ object Day24 {
                     minutes = 0,
                     currentPosition = start,
                     valley = initialValley,
-                    goal = goal
-                )
-            )
+                    goal = goal,
+                ),
+            ),
         )
         var fewestMinutesDiscovered = Int.MAX_VALUE
 
@@ -90,7 +90,7 @@ object Day24 {
             if (currentState.goalReached()) {
                 fewestMinutesDiscovered = min(
                     fewestMinutesDiscovered,
-                    currentState.minutes
+                    currentState.minutes,
                 )
                 continue
             }
@@ -162,7 +162,7 @@ object Day24 {
                 '#' -> Wall(position)
                 '^', 'v', '>', '<' -> Blizzard(
                     position = position,
-                    direction = Direction.of(representation)
+                    direction = Direction.of(representation),
                 )
 
                 else -> error("Unknown representation '$representation'")
@@ -175,7 +175,7 @@ object Day24 {
 
     private data class Blizzard(
         override val position: Point,
-        private val direction: Direction
+        private val direction: Direction,
     ) : Tile {
         fun move(valley: Valley): Blizzard {
             val newPosition = when (direction) {
@@ -195,7 +195,11 @@ object Day24 {
     }
 
     private enum class Direction {
-        N, S, W, E;
+        N,
+        S,
+        W,
+        E,
+        ;
 
         companion object {
             fun of(representation: Char) = when (representation) {
@@ -210,7 +214,7 @@ object Day24 {
 
     private data class SystemState(
         val minutes: Int,
-        private val currentPosition: Point
+        private val currentPosition: Point,
     ) : Comparable<SystemState> {
         private lateinit var valley: Valley
         private lateinit var goal: Point
@@ -219,10 +223,10 @@ object Day24 {
             minutes: Int,
             currentPosition: Point,
             valley: Valley,
-            goal: Point
+            goal: Point,
         ) : this(
             minutes = minutes,
-            currentPosition = currentPosition
+            currentPosition = currentPosition,
         ) {
             this.valley = valley
             this.goal = goal
@@ -246,7 +250,7 @@ object Day24 {
                         minutes = nextMinutes,
                         currentPosition = nextPosition,
                         valley = nextValley,
-                        goal = goal
+                        goal = goal,
                     )
                 }
         }
@@ -256,7 +260,7 @@ object Day24 {
             currentPosition.plusY(),
             currentPosition.minusX(),
             currentPosition.plusX(),
-            currentPosition
+            currentPosition,
         )
 
         fun goalReached() = currentPosition == goal

@@ -8,12 +8,12 @@ import kotlin.test.assertEquals
 class Day20Test {
     @ParameterizedTest
     @CsvSource(
-        "/day-20-input-example.txt, 3",
-        "/day-20-input-puzzle.txt,  4_267"
+        "/inputs/year2022/day-20-input-example.txt, 3",
+        "/inputs/year2022/day-20-input-puzzle.txt,  4_267",
     )
     fun `calculates the sum of grove coordinates with the wrong decryption routine`(
         inputFile: String,
-        expectedSum: Long
+        expectedSum: Long,
     ) {
         val input = resourceText(inputFile)
 
@@ -24,12 +24,12 @@ class Day20Test {
 
     @ParameterizedTest
     @CsvSource(
-        "/day-20-input-example.txt, 1_623_178_306",
-        "/day-20-input-puzzle.txt,  6_871_725_358_451"
+        "/inputs/year2022/day-20-input-example.txt, 1_623_178_306",
+        "/inputs/year2022/day-20-input-puzzle.txt,  6_871_725_358_451",
     )
     fun `calculates the sum of grove coordinates with the correct decryption routine`(
         inputFile: String,
-        expectedSum: Long
+        expectedSum: Long,
     ) {
         val input = resourceText(inputFile)
 

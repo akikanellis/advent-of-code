@@ -5,11 +5,10 @@ import com.akikanellis.adventofcode.year2022.utils.Point
 object Day14 {
     private val SAND_STARTING_POINT = Point(500, 0)
 
-    fun unitsOfSandRestingBeforeFreefall(input: String) =
+    fun unitsOfSandRestingBeforeFreeFall(input: String) =
         unitsOfSandResting(input, sandFreeFalls = true)
 
-    fun unitsOfSandRestingWhenFull(input: String) =
-        unitsOfSandResting(input, sandFreeFalls = false)
+    fun unitsOfSandRestingWhenFull(input: String) = unitsOfSandResting(input, sandFreeFalls = false)
 
     private fun unitsOfSandResting(input: String, sandFreeFalls: Boolean): Int {
         val rockAndSandPoints = scannedRockPoints(input)
@@ -21,7 +20,7 @@ object Day14 {
         rockAndSandPoints += floorRockPoints(
             minRockXWithoutFloor,
             maxRockXWithoutFloor,
-            maxRockYWithoutFloor
+            maxRockYWithoutFloor,
         )
 
         var moreSandCanFit = true
@@ -76,9 +75,6 @@ object Day14 {
                 }
         }.toMutableSet()
 
-    private fun floorRockPoints(
-        minX: Int,
-        maxX: Int,
-        maxY: Int
-    ) = (minX - maxY..maxX + maxY).map { x -> Point(x, maxY + 2) }
+    private fun floorRockPoints(minX: Int, maxX: Int, maxY: Int) =
+        (minX - maxY..maxX + maxY).map { x -> Point(x, maxY + 2) }
 }

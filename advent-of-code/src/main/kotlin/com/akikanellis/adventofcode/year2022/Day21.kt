@@ -25,7 +25,7 @@ object Day21 {
 
     private fun solvingForGivenMonkey(
         originalMonkeys: Map<String, Monkey>,
-        monkeyName: String
+        monkeyName: String,
     ): Map<String, Monkey> {
         val originalRootMonkey = originalMonkeys["root"]!!
         val monkeys = originalMonkeys -
@@ -78,28 +78,27 @@ object Day21 {
         fun solvingFor(operand: String): MathMonkey
 
         companion object {
-            fun of(name: String, job: String) =
-                if (job.toLongOrNull() != null) {
-                    NumberMonkey(
-                        name = name,
-                        number = job.toLong()
-                    )
-                } else {
-                    val jobParts = job.split(" ")
-                    MathMonkey(
-                        name = name,
-                        firstOperand = jobParts[0],
-                        operator = Operator.of(jobParts[1].toCharArray().single()),
-                        secondOperand = jobParts[2]
-                    )
-                }
+            fun of(name: String, job: String) = if (job.toLongOrNull() != null) {
+                NumberMonkey(
+                    name = name,
+                    number = job.toLong(),
+                )
+            } else {
+                val jobParts = job.split(" ")
+                MathMonkey(
+                    name = name,
+                    firstOperand = jobParts[0],
+                    operator = Operator.of(jobParts[1].toCharArray().single()),
+                    secondOperand = jobParts[2],
+                )
+            }
         }
     }
 
     private data class NumberMonkey(
         override val name: String,
         override val operands: List<String> = emptyList(),
-        val number: Long
+        val number: Long,
     ) : Monkey {
         override fun withSubtractionOperation() = error("Operations are not applicable")
         override fun yellNumber(monkeys: Map<String, Monkey>) = number
@@ -111,7 +110,7 @@ object Day21 {
         val firstOperand: String,
         val operator: Operator,
         val secondOperand: String,
-        override val operands: List<String> = listOf(firstOperand, secondOperand)
+        override val operands: List<String> = listOf(firstOperand, secondOperand),
     ) : Monkey {
         override fun withSubtractionOperation() = copy(operator = SUBTRACTION)
 
@@ -137,28 +136,28 @@ object Day21 {
                     name = firstOperand,
                     firstOperand = name,
                     operator = SUBTRACTION,
-                    secondOperand = secondOperand
+                    secondOperand = secondOperand,
                 )
 
                 SUBTRACTION -> MathMonkey(
                     name = firstOperand,
                     firstOperand = name,
                     operator = ADDITION,
-                    secondOperand = secondOperand
+                    secondOperand = secondOperand,
                 )
 
                 MULTIPLICATION -> MathMonkey(
                     name = firstOperand,
                     firstOperand = name,
                     operator = DIVISION,
-                    secondOperand = secondOperand
+                    secondOperand = secondOperand,
                 )
 
                 DIVISION -> MathMonkey(
                     name = firstOperand,
                     firstOperand = name,
                     operator = MULTIPLICATION,
-                    secondOperand = secondOperand
+                    secondOperand = secondOperand,
                 )
             }
 
@@ -167,28 +166,28 @@ object Day21 {
                     name = secondOperand,
                     firstOperand = name,
                     operator = SUBTRACTION,
-                    secondOperand = firstOperand
+                    secondOperand = firstOperand,
                 )
 
                 SUBTRACTION -> MathMonkey(
                     name = secondOperand,
                     firstOperand = firstOperand,
                     operator = SUBTRACTION,
-                    secondOperand = name
+                    secondOperand = name,
                 )
 
                 MULTIPLICATION -> MathMonkey(
                     name = secondOperand,
                     firstOperand = name,
                     operator = DIVISION,
-                    secondOperand = firstOperand
+                    secondOperand = firstOperand,
                 )
 
                 DIVISION -> MathMonkey(
                     name = secondOperand,
                     firstOperand = firstOperand,
                     operator = DIVISION,
-                    secondOperand = name
+                    secondOperand = name,
                 )
             }
 
@@ -200,7 +199,8 @@ object Day21 {
         ADDITION,
         SUBTRACTION,
         MULTIPLICATION,
-        DIVISION;
+        DIVISION,
+        ;
 
         companion object {
             fun of(representation: Char) = when (representation) {

@@ -40,7 +40,7 @@ object Day15 {
 
                 val xAfterSkippingPointsWithoutBeacon = xAfterSkippingPointsWithoutBeacon(
                     sensorsToClosestBeacons,
-                    candidateDistressBeacon
+                    candidateDistressBeacon,
                 )
 
                 if (xAfterSkippingPointsWithoutBeacon != null) {
@@ -61,13 +61,13 @@ object Day15 {
             val coordinates = SENSORS_TO_BEACONS_REGEX.matchEntire(line)!!.groupValues
             Pair(
                 Point(coordinates[1].toInt(), coordinates[2].toInt()),
-                Point(coordinates[3].toInt(), coordinates[4].toInt())
+                Point(coordinates[3].toInt(), coordinates[4].toInt()),
             )
         }
 
     private fun xAfterSkippingPointsWithoutBeacon(
         sensorsToClosestBeacons: List<Pair<Point, Point>>,
-        candidateDistressBeacon: Point
+        candidateDistressBeacon: Point,
     ): Int? = sensorsToClosestBeacons
         .firstOrNull { (sensor, closestBeacon) ->
             sensor.manhattanDistance(closestBeacon) >=

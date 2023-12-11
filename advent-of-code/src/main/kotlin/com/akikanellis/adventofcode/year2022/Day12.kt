@@ -11,7 +11,7 @@ object Day12 {
         val shortestPath =
             shortestPath(
                 ascending = ascending,
-                startSquare = startSquare
+                startSquare = startSquare,
             ) { square -> if (ascending) square.endSquare else square.lowestElevation }
 
         return shortestPath.size - 1
@@ -25,7 +25,7 @@ object Day12 {
                 row.mapIndexed { columnIndex, heightmapCharacter ->
                     Square(
                         position = Point(columnIndex, rowIndex),
-                        heightmapCharacter = heightmapCharacter
+                        heightmapCharacter = heightmapCharacter,
                     )
                 }
             }
@@ -38,8 +38,8 @@ object Day12 {
                     squaresGrid[square.y].elementAtOrNull(square.x + 1),
                     squaresGrid[square.y].elementAtOrNull(square.x - 1),
                     squaresGrid.elementAtOrNull(square.y + 1)?.get(square.x),
-                    squaresGrid.elementAtOrNull(square.y - 1)?.get(square.x)
-                )
+                    squaresGrid.elementAtOrNull(square.y - 1)?.get(square.x),
+                ),
             )
         }
 
@@ -49,7 +49,7 @@ object Day12 {
     private fun shortestPath(
         ascending: Boolean,
         startSquare: Square,
-        endSquareFound: (Square) -> Boolean
+        endSquareFound: (Square) -> Boolean,
     ): List<Square> {
         val endSquare = endSquare(ascending, startSquare, endSquareFound)
 
@@ -67,7 +67,7 @@ object Day12 {
     private fun endSquare(
         ascending: Boolean,
         startSquare: Square,
-        endSquareFound: (Square) -> Boolean
+        endSquareFound: (Square) -> Boolean,
     ): Square {
         val squaresToVisit = mutableListOf(startSquare)
 
@@ -93,7 +93,7 @@ object Day12 {
         val position: Point,
         val heightmapCharacter: Char,
         var visited: Boolean = false,
-        var parent: Square? = null
+        var parent: Square? = null,
     ) {
         val x = position.x
         val y = position.y

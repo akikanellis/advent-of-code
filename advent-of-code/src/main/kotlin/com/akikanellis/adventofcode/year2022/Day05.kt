@@ -1,17 +1,14 @@
 package com.akikanellis.adventofcode.year2022
 
 object Day05 {
-    fun cratesOnTheTopOfEachStack(
-        input: String,
-        craneMovesMultipleCratesAtOnce: Boolean
-    ): String {
+    fun cratesOnTheTopOfEachStack(input: String, craneMovesMultipleCratesAtOnce: Boolean): String {
         val stacks = stacks(input)
         val moves = moves(input)
 
         val stacksAfterMoves = stacksAfterMoves(
             stacks,
             moves,
-            craneMovesMultipleCratesAtOnce
+            craneMovesMultipleCratesAtOnce,
         )
 
         return stacksAfterMoves
@@ -33,7 +30,7 @@ object Day05 {
                 .map { (index, crate) -> IndexedValue(index + 1, crate[1]) }
         }.groupBy(
             { (index, _) -> index },
-            { (_, crates) -> crates }
+            { (_, crates) -> crates },
         )
 
     private fun moves(input: String) = input
@@ -46,7 +43,7 @@ object Day05 {
     private fun stacksAfterMoves(
         stacks: Stacks,
         moves: List<Move>,
-        craneMovesMultipleCratesAtOnce: Boolean
+        craneMovesMultipleCratesAtOnce: Boolean,
     ) = moves
         .fold(stacks) { latestStacks, (numberOfCrates, sourceStackId, targetStackId) ->
             val sourceStackCrates = latestStacks[sourceStackId]!!

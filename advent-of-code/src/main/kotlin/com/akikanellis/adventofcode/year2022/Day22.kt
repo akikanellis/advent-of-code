@@ -11,7 +11,7 @@ object Day22 {
 
         val finalBoardPosition = pathInstructions
             .fold(
-                BoardPosition(board.startingTile, Direction.R)
+                BoardPosition(board.startingTile, Direction.R),
             ) { currentPosition, pathInstruction ->
                 currentPosition.followInstruction(pathInstruction, board)
             }
@@ -157,7 +157,7 @@ object Day22 {
         fun addNextBoardPosition(
             nextTile: Tile,
             exitDirection: Direction,
-            entryDirection: Direction = exitDirection
+            entryDirection: Direction = exitDirection,
         ) {
             nextBoardPositions += exitDirection to BoardPosition(nextTile, entryDirection)
         }
@@ -167,7 +167,8 @@ object Day22 {
 
     private enum class TileType {
         OPEN,
-        WALL;
+        WALL,
+        ;
 
         companion object {
             fun of(representation: Char) = when (representation) {
@@ -210,11 +211,7 @@ object Day22 {
             }
         }
 
-        fun zipWith(
-            otherCubeSide: CubeSide,
-            exitDirection: Direction,
-            entryDirection: Direction
-        ) {
+        fun zipWith(otherCubeSide: CubeSide, exitDirection: Direction, entryDirection: Direction) {
             val exitTiles = tiles(exitDirection)
             val entryTiles = otherCubeSide
                 .tiles(entryDirection)
@@ -225,8 +222,8 @@ object Day22 {
                         Pair(Direction.U, Direction.R),
                         Pair(Direction.D, Direction.L),
                         Pair(Direction.L, Direction.D),
-                        Pair(Direction.R, Direction.U) -> it.reversed()
-
+                        Pair(Direction.R, Direction.U),
+                        -> it.reversed()
                         else -> it
                     }
                 }
@@ -239,7 +236,7 @@ object Day22 {
                     exitTile.addNextBoardPosition(
                         entryTile,
                         exitDirection,
-                        newDirection
+                        newDirection,
                     )
                 }
         }
@@ -285,12 +282,11 @@ object Day22 {
 
     private sealed interface PathInstruction {
         companion object {
-            fun of(representation: String) =
-                if (representation.toIntOrNull() == null) {
-                    TurnInstruction.of(representation)
-                } else {
-                    MoveInstruction.of(representation)
-                }
+            fun of(representation: String) = if (representation.toIntOrNull() == null) {
+                TurnInstruction.of(representation)
+            } else {
+                MoveInstruction.of(representation)
+            }
         }
     }
 
@@ -369,7 +365,8 @@ object Day22 {
         R {
             override fun oppositeDirection() = L
             override fun passwordValue() = 0
-        };
+        },
+        ;
 
         abstract fun oppositeDirection(): Direction
         abstract fun passwordValue(): Int

@@ -16,9 +16,8 @@ object Day03 {
         .lines()
         .filter { it.isNotBlank() }
 
-    private fun priority(itemType: Char) =
-        when {
-            itemType.isLowerCase() -> itemType - 'a' + 1
-            else -> itemType - 'A' + 27
-        }
+    private fun priority(itemType: Char) = when {
+        itemType.isLowerCase() -> itemType - 'a' + 1
+        else -> itemType - 'A' + 27
+    }
 }

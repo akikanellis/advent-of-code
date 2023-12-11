@@ -19,7 +19,8 @@ object Day17 {
 
     private enum class Direction {
         LEFT,
-        RIGHT;
+        RIGHT,
+        ;
 
         companion object {
             fun of(representation: Char) = when (representation) {
@@ -32,7 +33,7 @@ object Day17 {
 
     private class Cave(
         private val amountOfRocksToFall: Long,
-        private val gasDirectionsCircularListIterator: CircularListIterator<Direction>
+        private val gasDirectionsCircularListIterator: CircularListIterator<Direction>,
     ) {
 
         var towerHeight = 0L
@@ -57,7 +58,7 @@ object Day17 {
 
                 precomputedSystemStateToResult += systemState to SystemResult(
                     amountOfRocksThatHaveFallen = amountOfRocksThatHaveFallen,
-                    towerHeight = towerHeight
+                    towerHeight = towerHeight,
                 )
             }
 
@@ -69,7 +70,7 @@ object Day17 {
             Rock.crossRock(),
             Rock.lRock(),
             Rock.verticalLineRock(),
-            Rock.squareRock()
+            Rock.squareRock(),
         ).circularListIterator()
 
         private fun moveNextRock(): Rock {
@@ -80,7 +81,7 @@ object Day17 {
             while (true) {
                 val rockMovedByGas = rock.movedByGas(
                     gasDirectionsCircularListIterator.next(),
-                    occupiedFragmentPositions
+                    occupiedFragmentPositions,
                 )
                 val rockMovedDown = rockMovedByGas.movedDown(occupiedFragmentPositions)
 
@@ -100,13 +101,13 @@ object Day17 {
                 SystemState(
                     rockId = rocksToFallCircularListIterator.previousIndex(),
                     gasDirectionId = gasDirectionsCircularListIterator.previousIndex(),
-                    topFragmentPositionsPerColumn = topFragmentPositionsPerColumn
+                    topFragmentPositionsPerColumn = topFragmentPositionsPerColumn,
                 )
             }
 
         private fun computeTowerHeightForLoop(
             systemState: SystemState,
-            amountOfRocksThatHaveFallen: Long
+            amountOfRocksThatHaveFallen: Long,
         ) {
             val (initialAmountOfRocksThatHaveFallen, initialTowerHeight) =
                 precomputedSystemStateToResult.getValue(systemState)
@@ -140,7 +141,7 @@ object Day17 {
         constructor(vararg fragmentPositions: Point) : this(fragmentPositions.toSet())
 
         fun startingToFall(towerHeight: Long) = Rock(
-            fragmentPositions.map { it.copy(x = it.x + 2, y = it.y + towerHeight + 3) }
+            fragmentPositions.map { it.copy(x = it.x + 2, y = it.y + towerHeight + 3) },
         )
 
         fun movedByGas(gasDirection: Direction, occupiedFragmentPositions: Set<Point>): Rock {
@@ -150,9 +151,9 @@ object Day17 {
                         x = it.x + when (gasDirection) {
                             LEFT -> -1
                             RIGHT -> 1
-                        }
+                        },
                     )
-                }
+                },
             )
 
             if (updatedRock.outOfBounds(occupiedFragmentPositions)) return this
@@ -168,11 +169,10 @@ object Day17 {
             return updatedRock
         }
 
-        private fun outOfBounds(occupiedFragmentPositions: Set<Point>) =
-            minFragmentX < 0L ||
-                maxFragmentX > 6L ||
-                minFragmentY < 0L ||
-                fragmentPositions.any { it in occupiedFragmentPositions }
+        private fun outOfBounds(occupiedFragmentPositions: Set<Point>) = minFragmentX < 0L ||
+            maxFragmentX > 6L ||
+            minFragmentY < 0L ||
+            fragmentPositions.any { it in occupiedFragmentPositions }
 
         companion object {
             // ####
@@ -180,7 +180,7 @@ object Day17 {
                 Point(0, 0),
                 Point(1, 0),
                 Point(2, 0),
-                Point(3, 0)
+                Point(3, 0),
             )
 
             // .#.
@@ -191,7 +191,7 @@ object Day17 {
                 Point(0, 1),
                 Point(1, 1),
                 Point(2, 1),
-                Point(1, 0)
+                Point(1, 0),
             )
 
             // ..#
@@ -202,7 +202,7 @@ object Day17 {
                 Point(2, 1),
                 Point(0, 0),
                 Point(1, 0),
-                Point(2, 0)
+                Point(2, 0),
             )
 
             // #
@@ -213,7 +213,7 @@ object Day17 {
                 Point(0, 3),
                 Point(0, 2),
                 Point(0, 1),
-                Point(0, 0)
+                Point(0, 0),
             )
 
             // ##
@@ -222,7 +222,7 @@ object Day17 {
                 Point(0, 1),
                 Point(1, 1),
                 Point(0, 0),
-                Point(1, 0)
+                Point(1, 0),
             )
         }
     }
@@ -232,11 +232,11 @@ object Day17 {
     private data class SystemState(
         val rockId: Int,
         val gasDirectionId: Int,
-        val topFragmentPositionsPerColumn: Set<Point>
+        val topFragmentPositionsPerColumn: Set<Point>,
     )
 
     private data class SystemResult(
         val amountOfRocksThatHaveFallen: Long,
-        val towerHeight: Long
+        val towerHeight: Long,
     )
 }

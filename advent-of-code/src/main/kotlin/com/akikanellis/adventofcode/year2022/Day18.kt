@@ -19,8 +19,8 @@ object Day18 {
             Point3D(
                 minToMaxDimensionBounds.first,
                 minToMaxDimensionBounds.first,
-                minToMaxDimensionBounds.first
-            )
+                minToMaxDimensionBounds.first,
+            ),
         )
         var surfaceArea = 0
 
@@ -55,7 +55,7 @@ object Day18 {
             Point3D(
                 it[0].toInt(),
                 it[1].toInt(),
-                it[2].toInt()
+                it[2].toInt(),
             )
         }.toSet()
 
@@ -75,7 +75,7 @@ object Day18 {
                 copy(z = z - 1),
                 copy(x = x + 1),
                 copy(y = y + 1),
-                copy(z = z + 1)
+                copy(z = z + 1),
             )
         }
 

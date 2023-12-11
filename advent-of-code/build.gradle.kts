@@ -44,7 +44,7 @@ tasks.test {
             TestLogEvent.SKIPPED,
             TestLogEvent.FAILED,
             TestLogEvent.STANDARD_OUT,
-            TestLogEvent.STANDARD_ERROR
+            TestLogEvent.STANDARD_ERROR,
         )
     }
 }

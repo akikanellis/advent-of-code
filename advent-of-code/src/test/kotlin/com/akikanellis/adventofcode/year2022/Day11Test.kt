@@ -8,16 +8,16 @@ import kotlin.test.assertEquals
 class Day11Test {
     @ParameterizedTest
     @CsvSource(
-        "/day-11-input-example.txt, 20,     3, 10_605",
-        "/day-11-input-puzzle.txt,  20,     3, 61_503",
-        "/day-11-input-example.txt, 10_000, 1, 2_713_310_158",
-        "/day-11-input-puzzle.txt,  10_000, 1, 14_081_365_540"
+        "/inputs/year2022/day-11-input-example.txt, 20,     3, 10_605",
+        "/inputs/year2022/day-11-input-puzzle.txt,  20,     3, 61_503",
+        "/inputs/year2022/day-11-input-example.txt, 10_000, 1, 2_713_310_158",
+        "/inputs/year2022/day-11-input-puzzle.txt,  10_000, 1, 14_081_365_540",
     )
     fun `calculates monkey business level`(
         inputFile: String,
         rounds: Int,
         itemDivisor: Int,
-        expectedLevel: Long
+        expectedLevel: Long,
     ) {
         val input = resourceText(inputFile)
 

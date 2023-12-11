@@ -8,15 +8,15 @@ import kotlin.test.assertEquals
 class Day22Test {
     @ParameterizedTest
     @CsvSource(
-        "/day-22-input-example.txt, false, 6_032",
-        "/day-22-input-puzzle.txt,  false, 164_014",
-        "/day-22-input-example.txt, true,  5_031",
-        "/day-22-input-puzzle.txt,  true,  47_525"
+        "/inputs/year2022/day-22-input-example.txt, false, 6_032",
+        "/inputs/year2022/day-22-input-puzzle.txt,  false, 164_014",
+        "/inputs/year2022/day-22-input-example.txt, true,  5_031",
+        "/inputs/year2022/day-22-input-puzzle.txt,  true,  47_525",
     )
     fun `calculates the device password`(
         inputFile: String,
         cubeProcessing: Boolean,
-        expectedPassword: Int
+        expectedPassword: Int,
     ) {
         val input = resourceText(inputFile)
 

@@ -8,18 +8,18 @@ import kotlin.test.assertEquals
 class Day05Test {
     @ParameterizedTest
     @CsvSource(
-        "/day-05-input-example.txt, CMZ",
-        "/day-05-input-puzzle.txt,  ZBDRNPMVH"
+        "/inputs/year2022/day-05-input-example.txt, CMZ",
+        "/inputs/year2022/day-05-input-puzzle.txt,  ZBDRNPMVH",
     )
     fun `finds crates on the top of each stack for CrateMover 9000`(
         inputFile: String,
-        expectedTopCrates: String
+        expectedTopCrates: String,
     ) {
         val input = resourceText(inputFile)
 
         val cratesOnTheTopOfEachStack = Day05.cratesOnTheTopOfEachStack(
             input,
-            craneMovesMultipleCratesAtOnce = false
+            craneMovesMultipleCratesAtOnce = false,
         )
 
         assertEquals(expectedTopCrates, cratesOnTheTopOfEachStack)
@@ -27,18 +27,18 @@ class Day05Test {
 
     @ParameterizedTest
     @CsvSource(
-        "/day-05-input-example.txt, MCD",
-        "/day-05-input-puzzle.txt,  WDLPFNNNB"
+        "/inputs/year2022/day-05-input-example.txt, MCD",
+        "/inputs/year2022/day-05-input-puzzle.txt,  WDLPFNNNB",
     )
     fun `finds crates on the top of each stack for CrateMover 9001`(
         inputFile: String,
-        expectedTopCrates: String
+        expectedTopCrates: String,
     ) {
         val input = resourceText(inputFile)
 
         val cratesOnTheTopOfEachStack = Day05.cratesOnTheTopOfEachStack(
             input,
-            craneMovesMultipleCratesAtOnce = true
+            craneMovesMultipleCratesAtOnce = true,
         )
 
         assertEquals(expectedTopCrates, cratesOnTheTopOfEachStack)

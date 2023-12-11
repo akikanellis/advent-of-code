@@ -16,7 +16,7 @@ class PointTest {
         expectedPointAfterPlusX: Point,
         expectedPointAfterZeroY: Point,
         expectedPointAfterMinusY: Point,
-        expectedPointAfterPlusY: Point
+        expectedPointAfterPlusY: Point,
     ) {
         assertEquals(expectedPointAfterZeroX, point.zeroX())
         assertEquals(expectedPointAfterMinusX, point.minusX())
@@ -32,7 +32,7 @@ class PointTest {
     fun `calculates Manhattan distances`(
         point: Point,
         otherPoint: Point,
-        expectedManhattanDistance: Int
+        expectedManhattanDistance: Int,
     ) {
         val manhattanDistance = point.manhattanDistance(otherPoint)
 
@@ -51,7 +51,7 @@ class PointTest {
 
                 Point(0, 0),
                 Point(0, -1),
-                Point(0, 1)
+                Point(0, 1),
             ),
             Arguments.of(
                 Point(2, 3),
@@ -62,7 +62,7 @@ class PointTest {
 
                 Point(2, 0),
                 Point(2, 2),
-                Point(2, 4)
+                Point(2, 4),
             ),
             Arguments.of(
                 Point(-2, -3),
@@ -73,7 +73,7 @@ class PointTest {
 
                 Point(-2, 0),
                 Point(-2, -4),
-                Point(-2, -2)
+                Point(-2, -2),
             ),
             Arguments.of(
                 Point(-5, 5),
@@ -84,8 +84,8 @@ class PointTest {
 
                 Point(-5, 0),
                 Point(-5, 4),
-                Point(-5, 6)
-            )
+                Point(-5, 6),
+            ),
         )
 
         @JvmStatic
@@ -95,12 +95,12 @@ class PointTest {
             Arguments.of(
                 Point(Int.MIN_VALUE, Int.MIN_VALUE),
                 Point(Int.MIN_VALUE, Int.MIN_VALUE),
-                0
+                0,
             ),
             Arguments.of(
                 Point(Int.MAX_VALUE, Int.MAX_VALUE),
                 Point(Int.MAX_VALUE, Int.MAX_VALUE),
-                0
+                0,
             ),
 
             // Single axis
@@ -119,7 +119,7 @@ class PointTest {
             // Large distance
             Arguments.of(Point(1, 2), Point(60, 74), 131),
             Arguments.of(Point(15, 29), Point(60, 74), 90),
-            Arguments.of(Point(-15, -29), Point(-60, -74), 90)
+            Arguments.of(Point(-15, -29), Point(-60, -74), 90),
         )
     }
 }

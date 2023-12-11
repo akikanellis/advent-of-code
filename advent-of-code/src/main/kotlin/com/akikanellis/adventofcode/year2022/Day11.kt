@@ -7,7 +7,7 @@ object Day11 {
             .map {
                 Monkey(
                     monkeyLines = it.lines(),
-                    itemDivisor = itemDivisor.toLong()
+                    itemDivisor = itemDivisor.toLong(),
                 )
             }
 
@@ -49,7 +49,7 @@ object Day11 {
         val receiverIdOnTestFail: Int,
         val itemDivisor: Long,
         val highWorryLevelItemDivisor: Long = itemDivisor,
-        val numberOfInspections: Long = 0
+        val numberOfInspections: Long = 0,
     ) {
         constructor(monkeyLines: List<String>, itemDivisor: Long) : this(
             id = monkeyLines[0][7].digitToInt(),
@@ -70,14 +70,14 @@ object Day11 {
             receiverIdOnTestFail = monkeyLines[5]
                 .substringAfter("monkey ")
                 .toInt(),
-            itemDivisor = itemDivisor
+            itemDivisor = itemDivisor,
         )
 
         fun inspectItems() = copy(
             items = items
                 .map { operate(it) }
                 .map { manageWorryLevel(it) },
-            numberOfInspections = numberOfInspections + items.size
+            numberOfInspections = numberOfInspections + items.size,
         )
 
         private fun operate(item: Long): Long {
@@ -100,7 +100,7 @@ object Day11 {
             .map { (testPassed, worryLevel) ->
                 Pair(
                     if (testPassed) receiverIdOnTestPass else receiverIdOnTestFail,
-                    worryLevel
+                    worryLevel,
                 )
             }
             .groupBy({ (monkeyId, _) -> monkeyId }) { (_, thrownItem) -> thrownItem }

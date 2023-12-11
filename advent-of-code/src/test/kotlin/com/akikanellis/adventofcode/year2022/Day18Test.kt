@@ -8,12 +8,12 @@ import kotlin.test.assertEquals
 class Day18Test {
     @ParameterizedTest
     @CsvSource(
-        "/day-18-input-example.txt, 64",
-        "/day-18-input-puzzle.txt,  4_242"
+        "/inputs/year2022/day-18-input-example.txt, 64",
+        "/inputs/year2022/day-18-input-puzzle.txt,  4_242",
     )
     fun `calculates surface area of scanned lava droplet`(
         inputFile: String,
-        expectedSurfaceArea: Int
+        expectedSurfaceArea: Int,
     ) {
         val input = resourceText(inputFile)
 
@@ -25,12 +25,12 @@ class Day18Test {
 
     @ParameterizedTest
     @CsvSource(
-        "/day-18-input-example.txt, 58",
-        "/day-18-input-puzzle.txt,  2_428"
+        "/inputs/year2022/day-18-input-example.txt, 58",
+        "/inputs/year2022/day-18-input-puzzle.txt,  2_428",
     )
     fun `calculates surface area of scanned lava droplet without air pockets`(
         inputFile: String,
-        expectedSurfaceArea: Int
+        expectedSurfaceArea: Int,
     ) {
         val input = resourceText(inputFile)
 

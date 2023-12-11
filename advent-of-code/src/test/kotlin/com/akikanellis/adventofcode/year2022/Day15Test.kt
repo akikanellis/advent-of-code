@@ -8,13 +8,13 @@ import kotlin.test.assertEquals
 class Day15Test {
     @ParameterizedTest
     @CsvSource(
-        "/day-15-input-example.txt, 10,        26",
-        "/day-15-input-puzzle.txt,  2_000_000, 4_951_427"
+        "/inputs/year2022/day-15-input-example.txt, 10,        26",
+        "/inputs/year2022/day-15-input-puzzle.txt,  2_000_000, 4_951_427",
     )
     fun `finds number of positions without a beacon in row`(
         inputFile: String,
         targetRow: Int,
-        expectedNumberOfPositions: Int
+        expectedNumberOfPositions: Int,
     ) {
         val input = resourceText(inputFile)
 
@@ -25,13 +25,13 @@ class Day15Test {
 
     @ParameterizedTest
     @CsvSource(
-        "/day-15-input-example.txt, 20,        56_000_011",
-        "/day-15-input-puzzle.txt,  4_000_000, 13_029_714_573_243"
+        "/inputs/year2022/day-15-input-example.txt, 20,        56_000_011",
+        "/inputs/year2022/day-15-input-puzzle.txt,  4_000_000, 13_029_714_573_243",
     )
     fun `finds tuning frequency of distress beacon`(
         inputFile: String,
         distressBeaconMaxCoordinate: Int,
-        expectedTuningFrequency: Long
+        expectedTuningFrequency: Long,
     ) {
         val input = resourceText(inputFile)
 

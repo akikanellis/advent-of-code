@@ -9,13 +9,10 @@ import kotlin.test.assertEquals
 class Day10Test {
     @ParameterizedTest
     @CsvSource(
-        "/day-10-input-example.txt, 13_140",
-        "/day-10-input-puzzle.txt,  15_220"
+        "/inputs/year2022/day-10-input-example.txt, 13_140",
+        "/inputs/year2022/day-10-input-puzzle.txt,  15_220",
     )
-    fun `calculates sum of signal strengths`(
-        inputFile: String,
-        expectedSum: Int
-    ) {
+    fun `calculates sum of signal strengths`(inputFile: String, expectedSum: Int) {
         val input = resourceText(inputFile)
 
         val sumOfSignalStrengths = Day10.sumOfSignalStrengths(input)
@@ -25,7 +22,7 @@ class Day10Test {
 
     @Test
     fun `shows display output`() {
-        val input = resourceText("/day-10-input-puzzle.txt")
+        val input = resourceText("/inputs/year2022/day-10-input-puzzle.txt")
 
         val displayOutput = Day10.displayOutput(input)
 
@@ -38,7 +35,7 @@ class Day10Test {
                 #.#..#....#....#....#.#..#..#.#....#..#.
                 #..#.#....####.####.#..#.###..#....#..#.
             """.trimIndent(),
-            displayOutput
+            displayOutput,
         )
     }
 }

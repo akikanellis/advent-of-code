@@ -3,19 +3,17 @@ package com.akikanellis.adventofcode.year2022
 import java.lang.Math.floorMod
 
 object Day20 {
-    fun sumOfGroveCoordinatesWithWrongDecryptionRoutine(input: String) =
-        sumOfGroveCoordinates(
-            input = input,
-            decryptionKey = 1,
-            mixes = 1
-        )
+    fun sumOfGroveCoordinatesWithWrongDecryptionRoutine(input: String) = sumOfGroveCoordinates(
+        input = input,
+        decryptionKey = 1,
+        mixes = 1,
+    )
 
-    fun sumOfGroveCoordinatesWithCorrectDecryptionRoutine(input: String) =
-        sumOfGroveCoordinates(
-            input = input,
-            decryptionKey = 811_589_153,
-            mixes = 10
-        )
+    fun sumOfGroveCoordinatesWithCorrectDecryptionRoutine(input: String) = sumOfGroveCoordinates(
+        input = input,
+        decryptionKey = 811_589_153,
+        mixes = 10,
+    )
 
     private fun sumOfGroveCoordinates(input: String, decryptionKey: Int, mixes: Int): Long {
         val originalFileNumbers = originalFileNumbers(input, decryptionKey)
@@ -28,7 +26,7 @@ object Day20 {
 
                 val newFileNumberIndex = floorMod(
                     currentFileNumberIndex + fileNumber.value,
-                    fileNumbersSize
+                    fileNumbersSize,
                 )
 
                 mixedFileNumbers.removeAt(currentFileNumberIndex)
@@ -44,7 +42,7 @@ object Day20 {
         return listOf(
             1_000,
             2_000,
-            3_000
+            3_000,
         ).sumOf { groveCoordinateOffset ->
             val groveCoordinateFileNumberIndex =
                 (zeroFileNumberIndex + groveCoordinateOffset) % mixedFileNumbers.size

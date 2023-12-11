@@ -26,8 +26,8 @@ object Day19 {
                     OreRobot(Materials(ore = idAndCosts[1])),
                     ClayRobot(Materials(ore = idAndCosts[2])),
                     ObsidianRobot(Materials(ore = idAndCosts[3], clay = idAndCosts[4])),
-                    GeodeRobot(Materials(ore = idAndCosts[5], obsidian = idAndCosts[6]))
-                )
+                    GeodeRobot(Materials(ore = idAndCosts[5], obsidian = idAndCosts[6])),
+                ),
             )
         }
 
@@ -35,7 +35,7 @@ object Day19 {
         val maxMaterialCosts = Materials(
             ore = robots.maxOf { it.materialCosts.ore },
             clay = robots.maxOf { it.materialCosts.clay },
-            obsidian = robots.maxOf { it.materialCosts.obsidian }
+            obsidian = robots.maxOf { it.materialCosts.obsidian },
         )
 
         fun maxGeodeThatCanBeOpened(minutes: Int): Int {
@@ -45,9 +45,9 @@ object Day19 {
                     SystemState(
                         remainingMinutes = minutes,
                         materials = Materials(ore = 1),
-                        robotInventory = RobotInventory(listOf(robots.first { it is OreRobot }))
-                    )
-                )
+                        robotInventory = RobotInventory(listOf(robots.first { it is OreRobot })),
+                    ),
+                ),
             )
 
             while (statesQueue.isNotEmpty()) {
@@ -57,7 +57,7 @@ object Day19 {
 
                 currentMaxGeodeThatCanBeOpened = max(
                     currentMaxGeodeThatCanBeOpened,
-                    currentState.geodeThatCanBeOpened
+                    currentState.geodeThatCanBeOpened,
                 )
                 statesQueue += currentState.nextStates(this)
             }
@@ -71,35 +71,35 @@ object Day19 {
 
         fun moreRobotsOfTypeNeeded(
             robotInventory: RobotInventory,
-            maxMaterialCosts: Materials
+            maxMaterialCosts: Materials,
         ): Boolean
     }
 
     private data class OreRobot(override val materialCosts: Materials) : Robot {
         override fun moreRobotsOfTypeNeeded(
             robotInventory: RobotInventory,
-            maxMaterialCosts: Materials
+            maxMaterialCosts: Materials,
         ) = maxMaterialCosts.ore > robotInventory.oreRobots
     }
 
     private data class ClayRobot(override val materialCosts: Materials) : Robot {
         override fun moreRobotsOfTypeNeeded(
             robotInventory: RobotInventory,
-            maxMaterialCosts: Materials
+            maxMaterialCosts: Materials,
         ) = maxMaterialCosts.clay > robotInventory.clayRobots
     }
 
     private data class ObsidianRobot(override val materialCosts: Materials) : Robot {
         override fun moreRobotsOfTypeNeeded(
             robotInventory: RobotInventory,
-            maxMaterialCosts: Materials
+            maxMaterialCosts: Materials,
         ) = maxMaterialCosts.obsidian > robotInventory.obsidianRobots
     }
 
     private data class GeodeRobot(override val materialCosts: Materials) : Robot {
         override fun moreRobotsOfTypeNeeded(
             robotInventory: RobotInventory,
-            maxMaterialCosts: Materials
+            maxMaterialCosts: Materials,
         ) = robotInventory.obsidianRobots > 0
     }
 
@@ -107,20 +107,20 @@ object Day19 {
         val ore: Int = 0,
         val clay: Int = 0,
         val obsidian: Int = 0,
-        val geode: Int = 0
+        val geode: Int = 0,
     ) {
         operator fun plus(other: Materials) = Materials(
             ore = ore + other.ore,
             clay = clay + other.clay,
             obsidian = obsidian + other.obsidian,
-            geode = geode + other.geode
+            geode = geode + other.geode,
         )
 
         operator fun minus(other: Materials) = Materials(
             ore = (ore - other.ore).coerceAtLeast(0),
             clay = (clay - other.clay).coerceAtLeast(0),
             obsidian = (obsidian - other.obsidian).coerceAtLeast(0),
-            geode = (geode - other.geode).coerceAtLeast(0)
+            geode = (geode - other.geode).coerceAtLeast(0),
         )
     }
 
@@ -136,7 +136,7 @@ object Day19 {
     private data class SystemState(
         val remainingMinutes: Int,
         val materials: Materials,
-        val robotInventory: RobotInventory
+        val robotInventory: RobotInventory,
     ) : Comparable<SystemState> {
         private val maxGeodeThatCanBeOpened: Int
             get() {
@@ -168,13 +168,13 @@ object Day19 {
                 ore = robotInventory.oreRobots * minutesToBuild,
                 clay = robotInventory.clayRobots * minutesToBuild,
                 obsidian = robotInventory.obsidianRobots * minutesToBuild,
-                geode = robotInventory.geodeRobots * minutesToBuild
+                geode = robotInventory.geodeRobots * minutesToBuild,
             )
 
             return SystemState(
                 remainingMinutes = remainingMinutesAfterRobotBuilt,
                 materials = materials + robotProducedMaterial - robot.materialCosts,
-                robotInventory = robotInventory + robot
+                robotInventory = robotInventory + robot,
             )
         }
 
@@ -185,7 +185,7 @@ object Day19 {
                 ceil(remainingMaterial.ore / robotInventory.oreRobots.toFloat()).toInt(),
                 ceil(remainingMaterial.clay / robotInventory.clayRobots.toFloat()).toInt(),
                 ceil(remainingMaterial.obsidian / robotInventory.obsidianRobots.toFloat()).toInt(),
-                ceil(remainingMaterial.geode / robotInventory.geodeRobots.toFloat()).toInt()
+                ceil(remainingMaterial.geode / robotInventory.geodeRobots.toFloat()).toInt(),
             ) + 1
         }
     }

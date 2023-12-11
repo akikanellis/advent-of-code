@@ -8,13 +8,10 @@ import kotlin.test.assertEquals
 class Day02Test {
     @ParameterizedTest
     @CsvSource(
-        "/day-02-input-example.txt, 15",
-        "/day-02-input-puzzle.txt,    11_449"
+        "/inputs/year2022/day-02-input-example.txt, 15",
+        "/inputs/year2022/day-02-input-puzzle.txt,  11_449",
     )
-    fun `finds total score for hands`(
-        inputFile: String,
-        expectedTotalScore: Int
-    ) {
+    fun `finds total score for hands`(inputFile: String, expectedTotalScore: Int) {
         val input = resourceText(inputFile)
 
         val totalScoreForHands = Day02.totalScoreForHands(input)
@@ -24,12 +21,12 @@ class Day02Test {
 
     @ParameterizedTest
     @CsvSource(
-        "/day-02-input-example.txt, 12",
-        "/day-02-input-puzzle.txt,    13_187"
+        "/inputs/year2022/day-02-input-example.txt, 12",
+        "/inputs/year2022/day-02-input-puzzle.txt,  13_187",
     )
     fun `finds total score for first hand and round result`(
         inputFile: String,
-        expectedTotalScore: Int
+        expectedTotalScore: Int,
     ) {
         val input = resourceText(inputFile)
 

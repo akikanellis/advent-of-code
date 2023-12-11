@@ -8,13 +8,10 @@ import kotlin.test.assertEquals
 class Day01Test {
     @ParameterizedTest
     @CsvSource(
-        "/day-01-input-example.txt, 24_000",
-        "/day-01-input-puzzle.txt,  70_296"
+        "/inputs/year2022/day-01-input-example.txt, 24_000",
+        "/inputs/year2022/day-01-input-puzzle.txt,  70_296",
     )
-    fun `finds total calories of top elf`(
-        inputFile: String,
-        expectedCalories: Int
-    ) {
+    fun `finds total calories of top elf`(inputFile: String, expectedCalories: Int) {
         val input = resourceText(inputFile)
 
         val totalCaloriesOfTopElf = Day01.totalCaloriesOfTopElf(input)
@@ -24,13 +21,10 @@ class Day01Test {
 
     @ParameterizedTest
     @CsvSource(
-        "/day-01-input-example.txt, 45_000",
-        "/day-01-input-puzzle.txt,  205_381"
+        "/inputs/year2022/day-01-input-example.txt, 45_000",
+        "/inputs/year2022/day-01-input-puzzle.txt,  205_381",
     )
-    fun `finds total calories of top three elves`(
-        inputFile: String,
-        expectedCalories: Int
-    ) {
+    fun `finds total calories of top three elves`(inputFile: String, expectedCalories: Int) {
         val input = resourceText(inputFile)
 
         val totalCaloriesOfTopThreeElves = Day01.totalCaloriesOfTopThreeElves(input)

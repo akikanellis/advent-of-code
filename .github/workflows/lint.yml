@@ -9,12 +9,29 @@ name: Lint
         description: Allow a workflow run to pass when this workflow fails
         required: false
         default: false
+      apply-fixes:
+        type: boolean
+        description: Apply linter fixes
+        required: false
+        default: true
+    secrets:
+      AKI_BOT_APP_ID:
+        description: The aki-bot app ID
+        required: false
+      AKI_BOT_APP_PRIVATE_KEY:
+        description: The aki-bot private key
+        required: false
+
+permissions: {}
 
 jobs:
   lint:
     name: Lint
     runs-on: ubuntu-latest
     continue-on-error: ${{ inputs.continue-on-error }}
+
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout

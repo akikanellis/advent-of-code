@@ -64,7 +64,7 @@ object Day07 {
         val name: String,
         val parent: Directory? = null,
         val childDirectories: MutableList<Directory> = mutableListOf(),
-        val childFiles: MutableList<File> = mutableListOf()
+        val childFiles: MutableList<File> = mutableListOf(),
     ) {
         fun childDirectory(name: String) = childDirectories.single { it.name == name }
 

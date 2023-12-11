@@ -26,7 +26,7 @@ object Day02 {
     private enum class Hand(
         val score: Int,
         val firstRepresentation: String,
-        val secondRepresentation: String
+        val secondRepresentation: String,
     ) {
         ROCK(1, "A", "X") {
             override fun losesAgainst() = PAPER
@@ -36,12 +36,13 @@ object Day02 {
         },
         SCISSORS(3, "C", "Z") {
             override fun losesAgainst() = ROCK
-        };
+        },
+        ;
 
         companion object {
-            fun of(representation: String) = Hand.values()
+            fun of(representation: String) = entries
                 .firstOrNull { it.firstRepresentation == representation }
-                ?: Hand.values().first { it.secondRepresentation == representation }
+                ?: entries.first { it.secondRepresentation == representation }
         }
 
         abstract fun losesAgainst(): Hand
@@ -50,14 +51,13 @@ object Day02 {
         fun drawsAgainst() = this
         private fun drawsAgainst(opponentsHand: Hand) = drawsAgainst() == opponentsHand
 
-        fun winsAgainst() = Hand.values().single { it.losesAgainst(this) }
+        fun winsAgainst() = entries.single { it.losesAgainst(this) }
 
-        fun roundResultAgainst(opponentsHand: Hand) =
-            when {
-                losesAgainst(opponentsHand) -> LOSE
-                drawsAgainst(opponentsHand) -> DRAW
-                else -> WIN
-            }
+        fun roundResultAgainst(opponentsHand: Hand) = when {
+            losesAgainst(opponentsHand) -> LOSE
+            drawsAgainst(opponentsHand) -> DRAW
+            else -> WIN
+        }
     }
 
     private enum class RoundResult(val score: Int, val representation: String) {
@@ -71,10 +71,11 @@ object Day02 {
         WIN(6, "Z") {
             override fun handNeededForRoundResult(opponentsHand: Hand) =
                 opponentsHand.losesAgainst()
-        };
+        },
+        ;
 
         companion object {
-            fun of(representation: String) = values().first { it.representation == representation }
+            fun of(representation: String) = entries.first { it.representation == representation }
         }
 
         abstract fun handNeededForRoundResult(opponentsHand: Hand): Hand

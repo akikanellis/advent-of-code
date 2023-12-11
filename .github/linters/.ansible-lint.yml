@@ -1,4 +1,0 @@
----
-use_default_rules: true
-parseable: true
-skip_list: [yaml]
