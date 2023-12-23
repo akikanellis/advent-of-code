@@ -1,3 +1,10 @@
+## [1.25.11](https://github.com/akikanellis/advent-of-code/compare/v1.25.10...v1.25.11) (2023-12-23)
+
+
+### Build System
+
+* **deps:** update actions/stale action to v9 ([#131](https://github.com/akikanellis/advent-of-code/issues/131)) ([fceb196](https://github.com/akikanellis/advent-of-code/commit/fceb19689f5609ee5b23b47f8c53b4dcee139c91))
+
 ## [1.25.10](https://github.com/akikanellis/advent-of-code/compare/v1.25.9...v1.25.10) (2023-12-23)
 
 
