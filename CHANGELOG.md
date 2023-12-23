@@ -1,3 +1,10 @@
+## [1.25.10](https://github.com/akikanellis/advent-of-code/compare/v1.25.9...v1.25.10) (2023-12-23)
+
+
+### Build System
+
+* **deps:** update all non-major dependencies ([#133](https://github.com/akikanellis/advent-of-code/issues/133)) ([f077ae3](https://github.com/akikanellis/advent-of-code/commit/f077ae3fdabd4e7ad1541816a5fc0d6badac5e91))
+
 ## [1.25.9](https://github.com/akikanellis/advent-of-code/compare/v1.25.8...v1.25.9) (2023-12-16)
 
 
