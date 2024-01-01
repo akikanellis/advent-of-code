@@ -74,7 +74,7 @@ released daily from December 1st to 25th.
 Install the following software
 
 - [just](https://github.com/casey/just)
-- [asdf](https://github.com/asdf-vm/asdf)
+- [rtx](https://github.com/jdx/rtx)
 
 ### Usage
 
