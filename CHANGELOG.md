@@ -1,3 +1,10 @@
+## [1.25.13](https://github.com/akikanellis/advent-of-code/compare/v1.25.12...v1.25.13) (2024-01-01)
+
+
+### Build System
+
+* replace asdf with rtx ([#135](https://github.com/akikanellis/advent-of-code/issues/135)) ([9a4b22c](https://github.com/akikanellis/advent-of-code/commit/9a4b22cc6967924bd281fecac65e75d914f63f4c))
+
 ## [1.25.12](https://github.com/akikanellis/advent-of-code/compare/v1.25.11...v1.25.12) (2023-12-30)
 
 
