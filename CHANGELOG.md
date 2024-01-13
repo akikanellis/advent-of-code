@@ -1,3 +1,10 @@
+## [1.25.15](https://github.com/akikanellis/advent-of-code/compare/v1.25.14...v1.25.15) (2024-01-13)
+
+
+### Build System
+
+* **deps:** update ghcr.io/renovatebot/renovate docker tag to v37.130 ([#137](https://github.com/akikanellis/advent-of-code/issues/137)) ([a2368a8](https://github.com/akikanellis/advent-of-code/commit/a2368a829c921de447badb1f1d2c7602f909cbc9))
+
 ## [1.25.14](https://github.com/akikanellis/advent-of-code/compare/v1.25.13...v1.25.14) (2024-01-06)
 
 
