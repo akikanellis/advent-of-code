@@ -1,3 +1,10 @@
+## [1.25.26](https://github.com/akikanellis/advent-of-code/compare/v1.25.25...v1.25.26) (2024-03-16)
+
+
+### Build System
+
+* **deps:** update renovatebot/github-action action to v40 ([#145](https://github.com/akikanellis/advent-of-code/issues/145)) ([4ebdbe5](https://github.com/akikanellis/advent-of-code/commit/4ebdbe503d29df0dfb7cf04551d1a45c402b4711))
+
 ## [1.25.25](https://github.com/akikanellis/advent-of-code/compare/v1.25.24...v1.25.25) (2024-03-16)
 
 
