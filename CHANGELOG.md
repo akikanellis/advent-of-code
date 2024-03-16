@@ -1,3 +1,10 @@
+## [1.25.25](https://github.com/akikanellis/advent-of-code/compare/v1.25.24...v1.25.25) (2024-03-16)
+
+
+### Build System
+
+* **deps:** update hmarr/auto-approve-action action to v4 ([#147](https://github.com/akikanellis/advent-of-code/issues/147)) ([af455cc](https://github.com/akikanellis/advent-of-code/commit/af455ccee90a47cbd3aa2b5913492f0f32721fc2))
+
 ## [1.25.24](https://github.com/akikanellis/advent-of-code/compare/v1.25.23...v1.25.24) (2024-03-16)
 
 
