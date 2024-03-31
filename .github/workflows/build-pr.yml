@@ -17,6 +17,8 @@ jobs:
   test:
     name: Test
     uses: ./.github/workflows/test.yml
+    secrets:
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
   validate-branch-name:
     name: Validate branch name
