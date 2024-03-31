@@ -1,3 +1,10 @@
+## [1.25.32](https://github.com/akikanellis/advent-of-code/compare/v1.25.31...v1.25.32) (2024-03-31)
+
+
+### Build System
+
+* **deps:** update peter-murray/workflow-application-token-action action to v3 ([#144](https://github.com/akikanellis/advent-of-code/issues/144)) ([a392159](https://github.com/akikanellis/advent-of-code/commit/a3921596246d25381e4d35da60dff152f7708e84))
+
 ## [1.25.31](https://github.com/akikanellis/advent-of-code/compare/v1.25.30...v1.25.31) (2024-03-31)
 
 
