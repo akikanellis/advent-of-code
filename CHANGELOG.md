@@ -1,3 +1,94 @@
+## [1.25.31](https://github.com/akikanellis/advent-of-code/compare/v1.25.30...v1.25.31) (2024-03-31)
+
+
+### Build System
+
+* **deps:** update gradle/gradle-build-action action to v3 ([#143](https://github.com/akikanellis/advent-of-code/issues/143)) ([528784b](https://github.com/akikanellis/advent-of-code/commit/528784b70cdd3e19cb99de6e9d36842d970dad09))
+
+## [1.25.30](https://github.com/akikanellis/advent-of-code/compare/v1.25.29...v1.25.30) (2024-03-31)
+
+
+### Build System
+
+* **deps:** update codecov/codecov-action action to v4 ([#141](https://github.com/akikanellis/advent-of-code/issues/141)) ([a34e2c1](https://github.com/akikanellis/advent-of-code/commit/a34e2c12cd9f7081c648df4e1839ce74c77e19d6))
+
+## [1.25.29](https://github.com/akikanellis/advent-of-code/compare/v1.25.28...v1.25.29) (2024-03-30)
+
+
+### Build System
+
+* **deps:** update ghcr.io/renovatebot/renovate docker tag to v37.277 ([#156](https://github.com/akikanellis/advent-of-code/issues/156)) ([17aa240](https://github.com/akikanellis/advent-of-code/commit/17aa24066adfc93f27ce7c26c198ff7d33c9cd7e))
+
+## [1.25.28](https://github.com/akikanellis/advent-of-code/compare/v1.25.27...v1.25.28) (2024-03-30)
+
+
+### Build System
+
+* **deps:** update all non-major dependencies ([#155](https://github.com/akikanellis/advent-of-code/issues/155)) ([c8aafd7](https://github.com/akikanellis/advent-of-code/commit/c8aafd73142c867eb97c69cfc28b54bd112ac6f8))
+
+## [1.25.27](https://github.com/akikanellis/advent-of-code/compare/v1.25.26...v1.25.27) (2024-03-23)
+
+
+### Build System
+
+* **deps:** update all non-major dependencies ([#154](https://github.com/akikanellis/advent-of-code/issues/154)) ([db4f3aa](https://github.com/akikanellis/advent-of-code/commit/db4f3aaeebfc5e387883bd12ce38537863d46de1))
+
+## [1.25.26](https://github.com/akikanellis/advent-of-code/compare/v1.25.25...v1.25.26) (2024-03-16)
+
+
+### Build System
+
+* **deps:** update renovatebot/github-action action to v40 ([#145](https://github.com/akikanellis/advent-of-code/issues/145)) ([4ebdbe5](https://github.com/akikanellis/advent-of-code/commit/4ebdbe503d29df0dfb7cf04551d1a45c402b4711))
+
+## [1.25.25](https://github.com/akikanellis/advent-of-code/compare/v1.25.24...v1.25.25) (2024-03-16)
+
+
+### Build System
+
+* **deps:** update hmarr/auto-approve-action action to v4 ([#147](https://github.com/akikanellis/advent-of-code/issues/147)) ([af455cc](https://github.com/akikanellis/advent-of-code/commit/af455ccee90a47cbd3aa2b5913492f0f32721fc2))
+
+## [1.25.24](https://github.com/akikanellis/advent-of-code/compare/v1.25.23...v1.25.24) (2024-03-16)
+
+
+### Build System
+
+* **deps:** update all non-major dependencies ([#153](https://github.com/akikanellis/advent-of-code/issues/153)) ([67ca112](https://github.com/akikanellis/advent-of-code/commit/67ca1125baedb45f82feb4468b66ffeba8626a90))
+
+## [1.25.23](https://github.com/akikanellis/advent-of-code/compare/v1.25.22...v1.25.23) (2024-03-09)
+
+
+### Build System
+
+* **deps:** update all non-major dependencies ([#152](https://github.com/akikanellis/advent-of-code/issues/152)) ([e3e4e9e](https://github.com/akikanellis/advent-of-code/commit/e3e4e9e1e954b43beaadb1c705d302404af637f6))
+
+## [1.25.22](https://github.com/akikanellis/advent-of-code/compare/v1.25.21...v1.25.22) (2024-03-02)
+
+
+### Build System
+
+* **deps:** update all non-major dependencies ([#151](https://github.com/akikanellis/advent-of-code/issues/151)) ([0352252](https://github.com/akikanellis/advent-of-code/commit/0352252efc33ad1053d0429e60a9af1dce1ad27b))
+
+## [1.25.21](https://github.com/akikanellis/advent-of-code/compare/v1.25.20...v1.25.21) (2024-02-24)
+
+
+### Build System
+
+* **deps:** update ghcr.io/renovatebot/renovate docker tag to v37.212 ([#150](https://github.com/akikanellis/advent-of-code/issues/150)) ([bc36c1f](https://github.com/akikanellis/advent-of-code/commit/bc36c1fe403dbd1c62a200384ee5cf7006f7c90b))
+
+## [1.25.20](https://github.com/akikanellis/advent-of-code/compare/v1.25.19...v1.25.20) (2024-02-17)
+
+
+### Build System
+
+* **deps:** update ghcr.io/renovatebot/renovate docker tag to v37.194 ([#149](https://github.com/akikanellis/advent-of-code/issues/149)) ([3e06fb3](https://github.com/akikanellis/advent-of-code/commit/3e06fb360b4c8b542459aa04679cfd8ffc705d91))
+
+## [1.25.19](https://github.com/akikanellis/advent-of-code/compare/v1.25.18...v1.25.19) (2024-02-10)
+
+
+### Build System
+
+* **deps:** update all non-major dependencies ([#146](https://github.com/akikanellis/advent-of-code/issues/146)) ([521c1de](https://github.com/akikanellis/advent-of-code/commit/521c1dec2a39a5ae4b979858aa63ef96d40292a1))
+
 ## [1.25.18](https://github.com/akikanellis/advent-of-code/compare/v1.25.17...v1.25.18) (2024-02-03)
 
 
