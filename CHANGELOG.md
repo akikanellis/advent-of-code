@@ -1,3 +1,10 @@
+## [1.25.30](https://github.com/akikanellis/advent-of-code/compare/v1.25.29...v1.25.30) (2024-03-31)
+
+
+### Build System
+
+* **deps:** update codecov/codecov-action action to v4 ([#141](https://github.com/akikanellis/advent-of-code/issues/141)) ([a34e2c1](https://github.com/akikanellis/advent-of-code/commit/a34e2c12cd9f7081c648df4e1839ce74c77e19d6))
+
 ## [1.25.29](https://github.com/akikanellis/advent-of-code/compare/v1.25.28...v1.25.29) (2024-03-30)
 
 
