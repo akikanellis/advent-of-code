@@ -9,6 +9,10 @@ name: Test
         description: Allow a workflow run to pass when this workflow fails
         required: false
         default: false
+    secrets:
+      CODECOV_TOKEN:
+        description: The token used by Codecov
+        required: true
 
 jobs:
   test:

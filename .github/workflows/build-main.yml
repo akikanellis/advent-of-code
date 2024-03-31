@@ -30,6 +30,8 @@ jobs:
     uses: ./.github/workflows/test.yml
     with:
       continue-on-error: true
+    secrets:
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
   release:
     name: Release
