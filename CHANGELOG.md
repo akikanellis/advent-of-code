@@ -1,3 +1,10 @@
+## [1.25.33](https://github.com/akikanellis/advent-of-code/compare/v1.25.32...v1.25.33) (2024-04-01)
+
+
+### Build System
+
+* remove global Renovate properties ([#157](https://github.com/akikanellis/advent-of-code/issues/157)) ([0574f6b](https://github.com/akikanellis/advent-of-code/commit/0574f6b3b3d9dc95020fb381fec61008fdcb5842))
+
 ## [1.25.32](https://github.com/akikanellis/advent-of-code/compare/v1.25.31...v1.25.32) (2024-03-31)
 
 
