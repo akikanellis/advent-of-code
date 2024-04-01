@@ -12,8 +12,13 @@
 
     "helpers:pinGitHubActionDigests"
   ],
+  username: "aki-bot[bot]",
   gitAuthor: "aki-bot <103840025+aki-bot[bot]@users.noreply.github.com>",
+  platform: "github",
+  repositories: ["akikanellis/advent-of-code"],
   branchPrefix: "update-dependencies-",
+  onboarding: false,
+  requireConfig: "required",
   automerge: true,
   schedule: ["after 3:00 and before 6:00 on Saturday"],
   customManagers: [
