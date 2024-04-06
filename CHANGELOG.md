@@ -1,3 +1,15 @@
+## [1.25.34](https://github.com/akikanellis/advent-of-code/compare/v1.25.33...v1.25.34) (2024-04-06)
+
+
+### Reverts
+
+* remove global Renovate properties ([#158](https://github.com/akikanellis/advent-of-code/issues/158)) ([5993f5a](https://github.com/akikanellis/advent-of-code/commit/5993f5ae221b4de705e950791a6ce7e00d07a42b))
+
+
+### Build System
+
+* **deps:** update all non-major dependencies ([#159](https://github.com/akikanellis/advent-of-code/issues/159)) ([d5ce4bd](https://github.com/akikanellis/advent-of-code/commit/d5ce4bdb1d62cbc7bcdb2621450ba5b13e1ad91d))
+
 ## [1.25.33](https://github.com/akikanellis/advent-of-code/compare/v1.25.32...v1.25.33) (2024-04-01)
 
 
