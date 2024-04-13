@@ -1,3 +1,10 @@
+## [1.25.36](https://github.com/akikanellis/advent-of-code/compare/v1.25.35...v1.25.36) (2024-04-13)
+
+
+### Build System
+
+* **deps:** update dependency java to v21 ([#161](https://github.com/akikanellis/advent-of-code/issues/161)) ([ad044f9](https://github.com/akikanellis/advent-of-code/commit/ad044f9dcd527788d750e9f399531b102a91c79b))
+
 ## [1.25.35](https://github.com/akikanellis/advent-of-code/compare/v1.25.34...v1.25.35) (2024-04-13)
 
 
