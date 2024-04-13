@@ -55,7 +55,7 @@ jobs:
         with:
           distribution: temurin
           # renovate: datasource=java-version depName=java
-          java-version: 17.0.10+7
+          java-version: 21.0.2+13.0.LTS
 
       - name: Setup Gradle
         # yamllint disable-line rule:line-length
