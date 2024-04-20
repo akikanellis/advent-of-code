@@ -31,11 +31,11 @@ jobs:
         with:
           distribution: temurin
           # renovate: datasource=java-version depName=java
-          java-version: 21.0.2+13.0.LTS
+          java-version: 21.0.3+9.0.LTS
 
       - name: Setup Gradle
         # yamllint disable-line rule:line-length
-        uses: gradle/actions/setup-gradle@6cec5d49d4d6d4bb982fbed7047db31ea6d38f11 # v3.3.0
+        uses: gradle/actions/setup-gradle@750cdda3edd6d51b7fdfc069d2e2818cf3c44f4c # v3.3.1
 
       - name: Test
         run: ./gradlew test jacocoTestReport
