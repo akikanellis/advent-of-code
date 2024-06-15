@@ -1,3 +1,10 @@
+## [1.25.49](https://github.com/akikanellis/advent-of-code/compare/v1.25.48...v1.25.49) (2024-06-15)
+
+
+### Build System
+
+* **deps:** update gradle/actions digest to 31ae356 ([#176](https://github.com/akikanellis/advent-of-code/issues/176)) ([3a9905c](https://github.com/akikanellis/advent-of-code/commit/3a9905cb973817e895af1b2745b7d887401a5ed0))
+
 ## [1.25.48](https://github.com/akikanellis/advent-of-code/compare/v1.25.47...v1.25.48) (2024-06-15)
 
 
