@@ -1,3 +1,10 @@
+## [1.25.48](https://github.com/akikanellis/advent-of-code/compare/v1.25.47...v1.25.48) (2024-06-15)
+
+
+### Build System
+
+* **deps:** update gradle/actions action to v3.4.1 ([#175](https://github.com/akikanellis/advent-of-code/issues/175)) ([e836d20](https://github.com/akikanellis/advent-of-code/commit/e836d20a886c16f0a0fd731d8870330c5d185194))
+
 ## [1.25.47](https://github.com/akikanellis/advent-of-code/compare/v1.25.46...v1.25.47) (2024-06-15)
 
 
