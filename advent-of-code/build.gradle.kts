@@ -2,7 +2,7 @@ import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.gradle.api.tasks.testing.logging.TestLogEvent
 
 plugins {
-    kotlin("jvm") version "1.9.24"
+    kotlin("jvm") version "1.9.25"
 
     jacoco
 }
@@ -22,7 +22,7 @@ dependencies {
 kotlin {
     jvmToolchain {
         // renovate: datasource=java-version depName=java
-        val javaVersion = "21.0.3+9.0.LTS"
+        val javaVersion = "21.0.4+7.0.LTS"
         val javaMajorVersion = javaVersion.split(".").first()
 
         vendor.set(JvmVendorSpec.ADOPTIUM)
