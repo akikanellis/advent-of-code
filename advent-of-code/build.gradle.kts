@@ -15,8 +15,8 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test-junit5"))
-    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.11.1")
-    testImplementation("org.junit.jupiter:junit-jupiter-params:5.11.1")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.11.2")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:5.11.2")
 }
 
 kotlin {
